@@ -1,0 +1,645 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>Linux - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>zyxyling</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/3.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-27 00:06" pubdate>
+        March 27, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Linux系统的常见命令"><a href="#Linux系统的常见命令" class="headerlink" title="Linux系统的常见命令"></a>Linux系统的常见命令</h1><p>[TOC]</p>
+<h3 id="1-常用指令"><a href="#1-常用指令" class="headerlink" title="1.常用指令"></a>1.常用指令</h3><h6 id="ls：-显示文件或目录"><a href="#ls：-显示文件或目录" class="headerlink" title="ls： 显示文件或目录"></a>ls： 显示文件或目录</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">ls</span> <span class="hljs-selector-attr">[-alrtAFR]</span><span class="hljs-selector-attr">[name...]</span><br></code></pre></td></tr></table></figure>
+<p>   -l      列出文件详细信息l(list)</p>
+<p>   -a      列出当前目录下所有文件及目录，包括隐藏的a(all)</p>
+<p>   -R      若目录下有文件，则以下之文件亦皆依序列出</p>
+<p>   -r       将文件以相反次序显示(原定依英文字母次序)</p>
+<p>   -t        将文件依建立时间之先后次序列出</p>
+<p>例如 :    ls /     (列出根目录下的所有目录)</p>
+<h6 id="cp-拷贝"><a href="#cp-拷贝" class="headerlink" title="cp:         拷贝"></a>cp:         拷贝</h6><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">cp</span> [-adfiprl] <span class="hljs-keyword">source</span> dest<br>或  <span class="hljs-keyword">cp</span> [-adfiprl] <span class="hljs-keyword">source</span>... directory<br></code></pre></td></tr></table></figure>
+<p>  -a：此选项通常在复制目录时使用，它保留链接、文件属性，并复制目录下的所有内容 </p>
+<p>   -d：复制时保留链接 </p>
+<p>   -f：覆盖已经存在的目标文件而不给出提示 </p>
+<p>​     -r：若给出的源文件是一个目录文件，此时将复制该目录下所有的子目录和文件 </p>
+<p>​     -l：不复制文件，只是生成链接文件 </p>
+<p>例如：  cp –r test/ newtest      （将目录“test/”下的所有文件复制到新目录“newtest”下）</p>
+<h6 id="mv：-移动或重命名"><a href="#mv：-移动或重命名" class="headerlink" title="mv：     移动或重命名"></a>mv：     移动或重命名</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">mv [-<span class="hljs-keyword">if</span>] <span class="hljs-built_in">source</span> dest<br>或  mv [-<span class="hljs-keyword">if</span>] <span class="hljs-built_in">source</span>... directory<br></code></pre></td></tr></table></figure>
+<p>​    -i： 若指定目录已有同名文件，则先询问是否覆盖旧文件 </p>
+<p>​    -f： 在 mv 操作要覆盖某已有的目标文件时不给任何指示</p>
+<table>
+<thead>
+<tr>
+<th>命令格式</th>
+<th>运行后</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mv 文件名 文件名</td>
+<td>将源文件名改为目标文件名</td>
+</tr>
+<tr>
+<td>mv 文件名 目录名</td>
+<td>将文件移动到目标目录</td>
+</tr>
+<tr>
+<td>mv 目录名 目录名</td>
+<td>目标目录已存在，将源目录移动到目标目录；目标目录不存在则改名</td>
+</tr>
+<tr>
+<td>mv 目录名 文件名</td>
+<td>出错</td>
+</tr>
+</tbody></table>
+<h6 id="rm-：-删除文件"><a href="#rm-：-删除文件" class="headerlink" title="rm ：       删除文件"></a>rm ：       删除文件</h6><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs prolog">rm [-ifr] name...<br></code></pre></td></tr></table></figure>
+<p>   -r       递归删除,可删除子目录及文件(删除目录时，需要使用)</p>
+<p>   -i        删除前逐一询问确认</p>
+<p>   -f       强制删除</p>
+<p>特：rm -r *    ( 删除当前目录下的所有文件及目录 )</p>
+<p>文件一旦删除，无法恢复！</p>
+<h6 id="touch-创建空文件"><a href="#touch-创建空文件" class="headerlink" title="touch  :    创建空文件"></a>touch  :    创建空文件</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">touch</span> <span class="hljs-selector-attr">[-acfm]</span><span class="hljs-selector-attr">[-d&lt;日期时间&gt;]</span><span class="hljs-selector-attr">[-r&lt;参考文件或目录&gt;]</span> <span class="hljs-selector-attr">[-t&lt;日期时间&gt;]</span><span class="hljs-selector-attr">[--help]</span><span class="hljs-selector-attr">[--version]</span><span class="hljs-selector-attr">[文件或目录…]</span><br></code></pre></td></tr></table></figure>
+<p>例如：touch file            （创建一个名为“file”的新的空白文件）</p>
+<h6 id="echo-创建带有内容的文件。"><a href="#echo-创建带有内容的文件。" class="headerlink" title="echo       创建带有内容的文件。"></a>echo       创建带有内容的文件。</h6><h6 id="cat-查看文件内容"><a href="#cat-查看文件内容" class="headerlink" title="cat  :       查看文件内容"></a>cat  :       查看文件内容</h6><h6 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir  :   创建目录"></a>mkdir  :   创建目录</h6><p>​        -p      创建目录，若无父目录，则创建p(parent)</p>
+<h6 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd  :      切换目录"></a>cd  :      切换目录</h6><h6 id="wc-统计文本中行数、字数、字符数"><a href="#wc-统计文本中行数、字数、字符数" class="headerlink" title="wc :        统计文本中行数、字数、字符数"></a>wc :        统计文本中行数、字数、字符数</h6><h6 id="rmdir-删除空目录"><a href="#rmdir-删除空目录" class="headerlink" title="rmdir   :   删除空目录"></a>rmdir   :   删除空目录</h6><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-built_in">rmdir</span> [-p] dirName<br></code></pre></td></tr></table></figure>
+<p>​        -p 是当子目录被删除后使它也成为空目录的话，则顺便一并删除。</p>
+<p>例如：rmdir AAA  （ 将工作目录下，名为 AAA 的子目录删除 ）</p>
+<p>​            rmdir -p BBB/Test  （ 在工作目录下的 BBB 目录中，删除名为 Test 的子目录。若 Test 删除后，BBB 目录成为空目录，则 BBB 亦予删除  ）</p>
+<h3 id="2-文件查找方式及区别"><a href="#2-文件查找方式及区别" class="headerlink" title="2.文件查找方式及区别"></a>2.文件查找方式及区别</h3><h6 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h6><p>该指令会在特定目录中查找符合条件的文件。这些文件应属于原始代码、二进制文件，或是帮助文件。</p>
+<p>该指令只能用于查找二进制文件、源代码文件和man手册页，一般文件的定位需使用locate命令。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">whereis</span> <span class="hljs-selector-attr">[-bfmsu]</span><span class="hljs-selector-attr">[-B &lt;目录&gt;...]</span><span class="hljs-selector-attr">[-M &lt;目录&gt;...]</span><span class="hljs-selector-attr">[-S &lt;目录&gt;...]</span><span class="hljs-selector-attr">[文件...]</span><br></code></pre></td></tr></table></figure>
+<p>​    -b 　只查找二进制文件。</p>
+<p>​    -B&lt;目录&gt; 　只在设置的目录下查找二进制文件。</p>
+<p>​    -f 　不显示文件名前的路径名称。</p>
+<p>​    -m 　只查找说明文件。</p>
+<p>​    -M&lt;目录&gt; 　只在设置的目录下查找说明文件。</p>
+<p>​    -s 　只查找原始代码文件。</p>
+<p>​     -S&lt;目录&gt; 　只在设置的目录下查找原始代码文件。</p>
+<p>​      -u 　查找不包含指定类型的文件</p>
+<h6 id="find"><a href="#find" class="headerlink" title="find"></a>find</h6><p>Linux find命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-builtin-name">find</span>   path   -option   [   -<span class="hljs-builtin-name">print</span> ]   [ -exec   -ok   command ]   &#123;&#125; \;<br></code></pre></td></tr></table></figure>
+<p>   path 和 expression： 在命令列上第一个 - ( ) , ! 之前的部份为 path，之后的是 expression。如果 path 是空字串则使用目前路径，如果 expression 是空字串则使用 -print 为预设 expression。 </p>
+<h3 id="3-软链接、硬链接以及区别"><a href="#3-软链接、硬链接以及区别" class="headerlink" title="3.软链接、硬链接以及区别"></a>3.软链接、硬链接以及区别</h3><h6 id="ln：-为某一个文件在另外一个位置建立一个同步的链接"><a href="#ln：-为某一个文件在另外一个位置建立一个同步的链接" class="headerlink" title="ln：  为某一个文件在另外一个位置建立一个同步的链接"></a>ln：  为某一个文件在另外一个位置建立一个同步的链接</h6><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">ln</span> <span class="hljs-selector-attr">[参数]</span><span class="hljs-selector-attr">[源文件或目录]</span><span class="hljs-selector-attr">[目标文件或目录]</span><br></code></pre></td></tr></table></figure>
+<p>参数格式： [-bdfinsvF] [-S backup-suffix] [-V {numbered,existing,simple}]</p>
+<p>[–help] [–version] [–]</p>
+<p>必要参数：</p>
+<ul>
+<li>-b 删除，覆盖以前建立的链接</li>
+<li>-d 允许超级用户制作目录的硬链接</li>
+<li>-f 强制执行</li>
+<li>-i 交互模式，文件存在则提示用户是否覆盖</li>
+<li>-n 把符号链接视为一般目录</li>
+<li>-s 软链接(符号链接)</li>
+<li>-v 显示详细的处理过程</li>
+</ul>
+<p>选择参数：</p>
+<ul>
+<li>-S “-S&lt;字尾备份字符串&gt; “或 “–suffix=&lt;字尾备份字符串&gt;”</li>
+<li>-V “-V&lt;备份方式&gt;”或”–version-control=&lt;备份方式&gt;”</li>
+<li>–help 显示帮助信息</li>
+<li>–version 显示版本信息</li>
+</ul>
+<h6 id="两种链接："><a href="#两种链接：" class="headerlink" title="两种链接："></a>两种链接：</h6><p>为解决文件的共享使用，Linux 系统引入了两种链接：</p>
+<p>硬链接 (hard link) 与软链接（又称符号链接，即 soft link 或 symbolic link）</p>
+<h6 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h6><p>是有着相同 inode 号仅文件名不同的文件，特性：</p>
+<ul>
+<li>文件有相同的 inode 及 data block；</li>
+<li>只能对已存在的文件进行创建；</li>
+<li>不能交叉文件系统进行硬链接的创建；</li>
+<li>不能对目录进行创建，只可对文件创建；</li>
+<li>删除一个硬链接文件并不影响其他有相同 inode 号的文件。</li>
+</ul>
+<h6 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h6><p>就是一个普通文件，只是数据块内容有点特殊。软链接有着自己的 inode 号以及用户数据块， 产生一个特殊的档案，该档案的内容是指向另一个档案的位置 ，特性：</p>
+<ul>
+<li>软链接有自己的文件属性及权限等；</li>
+<li>可对不存在的文件或目录创建软链接；</li>
+<li>软链接可交叉文件系统；</li>
+<li>软链接可对文件或目录创建；</li>
+<li>创建软链接时，链接计数 i_nlink 不会增加；</li>
+<li>删除软链接并不影响被指向的文件，但若被指向的原文件被删除，则相关软连接被称为死链接（即 dangling link，若被指向路径文件被重新创建，死链接可恢复为正常的软链接）。</li>
+</ul>
+<h3 id="4-在ubuntu下新建用户，设置权限，删除用户"><a href="#4-在ubuntu下新建用户，设置权限，删除用户" class="headerlink" title="4.在ubuntu下新建用户，设置权限，删除用户"></a>4.在ubuntu下新建用户，设置权限，删除用户</h3><h5 id="创建用户目录"><a href="#创建用户目录" class="headerlink" title="创建用户目录"></a>创建用户目录</h5><p>​    打开terminal</p>
+<ul>
+<li><p>sudo useradd -r -m -s /bin/bash  newyetan</p>
+</li>
+<li><p>ll /home/</p>
+</li>
+<li><p>ls /home/</p>
+</li>
+</ul>
+<h5 id="设置权限"><a href="#设置权限" class="headerlink" title="设置权限"></a>设置权限</h5><p>因为此文件只有r权限，在改动前需要增加w权限，改动后，再去掉w权限。 </p>
+<ul>
+<li><p>sudo chmod +w /etc/sudoers</p>
+</li>
+<li><p>sudo vim /etc/sudoers</p>
+<p>![IMG_20200327_184707](C:\Users\lenovo\Documents\Tencent Files\2449579323\FileRecv\MobileFile\IMG_20200327_184707.jpg)</p>
+</li>
+</ul>
+<p>  在 #User privilege specification</p>
+<p>  ​        root　ALL=(ALL:ALL) ALL处,下行写入：</p>
+<p>  ​       newyetan ALL=(ALL:ALL) ALL</p>
+<p>  ​        之后，按Esc推出insert模式，再点：w保存</p>
+<p>  创建完成，权限设置完成</p>
+<h5 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h5><ul>
+<li><p>执行userdel命令：sudo userdel newyetan</p>
+<pre><code>*  删除用户目录命令：sudo rm -rf /home/newyetan</code></pre>
+</li>
+</ul>
+<h3 id="5-通过命令行，连接有线网、无线网"><a href="#5-通过命令行，连接有线网、无线网" class="headerlink" title="5.通过命令行，连接有线网、无线网"></a>5.通过命令行，连接有线网、无线网</h3><h6 id="查看是否已经正确安装无线网卡"><a href="#查看是否已经正确安装无线网卡" class="headerlink" title="查看是否已经正确安装无线网卡"></a>查看是否已经正确安装无线网卡</h6><p>iwconfig</p>
+<h6 id="启动无线网卡-如果网卡是wlan0"><a href="#启动无线网卡-如果网卡是wlan0" class="headerlink" title="启动无线网卡(如果网卡是wlan0 )"></a>启动无线网卡(如果网卡是wlan0 )</h6><p>ifconfig wlan0 up</p>
+<h6 id="扫描可用的WiFi"><a href="#扫描可用的WiFi" class="headerlink" title="扫描可用的WiFi"></a>扫描可用的WiFi</h6><p>iwlist wlan0 scanning </p>
+<h6 id="创建口令文件-并连接"><a href="#创建口令文件-并连接" class="headerlink" title="创建口令文件, 并连接"></a>创建口令文件, 并连接</h6><p>wpa_passphrase ESSID PWD &gt; xxx.conf </p>
+<p>wpa_supplicant -B -i wlan0 -Dwext -c ./xxx.conf</p>
+<p>iwconfig wlan0 </p>
+<p>dhclient wlan0 </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%80%83%E6%A0%B8%E5%88%9D%E6%88%98/">考核初战</a>
+                    
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/03/28/00005-vim%E8%AF%AD%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">vim</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/26/00003-Markdown/">
+                        <span class="hidden-mobile">Markdown</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'icy-dark';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'zyxyling/share');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1149 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>python学习 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>zyxyling</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/1.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="python学习">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-15 00:00" pubdate>
+        April 15, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      65
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">python学习</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Python学习"><a href="#Python学习" class="headerlink" title="Python学习"></a>Python学习</h1><p>[TOC]</p>
+<h3 id="1、python特点"><a href="#1、python特点" class="headerlink" title="1、python特点"></a>1、python特点</h3><ul>
+<li><p>创作者</p>
+<p> Python是著名的“龟叔”Guido van Rossum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言。 </p>
+</li>
+<li><p>特点：</p>
+<p> “优雅”、“明确”、“简单” </p>
+</li>
+<li><p>缺点 ：</p>
+<ul>
+<li>运行速度慢 ，因为 Python是解释型语言 </li>
+<li> 代码不能加密 </li>
+</ul>
+</li>
+</ul>
+<h3 id="2、安装python"><a href="#2、安装python" class="headerlink" title="2、安装python"></a>2、安装python</h3><ul>
+<li>（之前已经安装python3.7.2）</li>
+</ul>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1586767233346.png" alt="1586767233346"></p>
+<ul>
+<li><p> 输入<code>exit()</code>并回车，退出Python交互式环境，或者直接关掉命令行窗口 </p>
+</li>
+<li><p>python解释器</p>
+<p>（之前已安装pycharm）</p>
+<ul>
+<li><p>CPython</p>
+<p>  CPython是使用最广的Python解释器 ,是用C语言开发的 ，用<code>&gt;&gt;&gt;</code>作为提示符 </p>
+</li>
+<li><p>IPython</p>
+<p> IPython是基于CPython之上的一个交互式解释器 ， IPython用<code>In [序号]:</code>作为提示符 </p>
+</li>
+<li><p>PyPy</p>
+<p> 对Python代码进行动态编译 ， 显著提高Python代码的执行速度</p>
+</li>
+<li><p>Jython</p>
+<p> 运行在Java平台上的Python解释器 </p>
+</li>
+<li><p>IronPython</p>
+<p> 是运行在微软.Net平台上的Python解释器 </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、第一个python程序"><a href="#3、第一个python程序" class="headerlink" title="3、第一个python程序"></a>3、第一个python程序</h3><h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><p>Windows 开始菜单处“命令提示符”，进入命令行模式</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1586767972224.png" alt="1586767972224"></p>
+<h5 id="Python交互模式"><a href="#Python交互模式" class="headerlink" title="Python交互模式"></a>Python交互模式</h5><p>命令行 模式下敲命令<code>python</code> ， 进入到Python交互模式</p>
+<p>按<code>exit()</code>退出Python交互模式，回到命令行模式 </p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1586767831621.png" alt="1586767831621"></p>
+<h5 id="执行一个-py文件"><a href="#执行一个-py文件" class="headerlink" title="执行一个.py文件"></a>执行一个<code>.py</code>文件</h5><p>   执行一个<code>.py</code>文件<em>只能</em>在命令行模式执行 ，而且 必须先把  当前目录切换到<code>hello.py</code>所在的目录下，才能正常执行</p>
+<p><img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1586768710347.png" alt="1586768710347"></p>
+<ul>
+<li>Python交互式环境下，可以直接得到结果，但是在命令行执行<code>.py</code>时，需要代码中<code>print（）</code></li>
+</ul>
+<p>  <img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\1586768355262.png" alt="1586768355262"></p>
+<h5 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h5><ul>
+<li><p>输出</p>
+<p> 用<code>print()</code>在括号中加上字符串 </p>
+<p> 也可以接受多个字符串，用逗号“,”隔开，就会连成一串输出 ，其中逗号“,”会输出一个空格 </p>
+</li>
+<li><p>输入</p>
+<p> Python提供了一个<code>input()</code>，可以让用户输入字符串，并存放到一个变量里 ，之后， 直接输入<code>name</code>查看变量内容 ，或者 还可以用<code>print()</code>函数 </p>
+</li>
+</ul>
+<h3 id="4、Python基础"><a href="#4、Python基础" class="headerlink" title="4、Python基础"></a>4、Python基础</h3><p>​         当语句以冒号<code>:</code>结尾时，缩进的语句视为代码块； 使用<em>4个空格</em>的缩进 ；区分大小写</p>
+<h5 id="数据类型与变量"><a href="#数据类型与变量" class="headerlink" title="数据类型与变量"></a>数据类型与变量</h5><ul>
+<li><p>整数  </p>
+<p>Python可以处理任意大小的整数，包括负整数，在程序中的表示方法和数学上的写法相同， 用以<code>0x</code>前缀 十六进制表示整数比较方便 </p>
+</li>
+<li><p>浮点数</p>
+<p> 对于很大或很小的浮点数，须用科学计数法表示，把10用e替代 </p>
+<p>！ 整数运算精确 ， 浮点数运算则可能会有四舍五入的误差 </p>
+</li>
+<li><p>字符串</p>
+<ul>
+<li> 四种字符串表示</li>
+</ul>
+<p>​            ‘ ’        “ ”            ‘’’ ‘’’              “””  “””</p>
+<ul>
+<li><p>用转义字符<code>\</code>来标识 内容里的引号</p>
+<p>有很多字符都需要转义时，Python允许用<code>r&#39;&#39;</code>表示<code>&#39;&#39;</code>内部的字符串默认不转义 </p>
+<p>字符串内部有很多换行，用<code>\n</code>写在一行里不好阅读，为了简化，Python允许用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>的格式表示多行内容， </p>
+</li>
+</ul>
+</li>
+<li><p>布尔值</p>
+<ul>
+<li><p>只有<code>True</code>、<code>False</code>两种值 </p>
+</li>
+<li><p>布尔值可以用  与或非  <code>and</code>、<code>or</code>和<code>not</code>运算 </p>
+</li>
+<li><p> 布尔值经常用在条件判断中 </p>
+</li>
+</ul>
+</li>
+<li><p>空值</p>
+<p> 用<code>None</code>表示，<code>None</code>不能理解为<code>0</code>，<code>0</code>是有意义的，而<code>None</code>是一个特殊的空值</p>
+</li>
+<li><p>变量</p>
+<ul>
+<li><p>变量名必须是大小写英文、数字和<code>_</code>的组合，且不能用数字开头 </p>
+</li>
+<li><p>变量本身类型不固定的语言称之为<strong>动态语言</strong>，与之对应的是<strong>静态语言</strong>。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，会报错。 </p>
+</li>
+</ul>
+</li>
+<li><p>常量</p>
+<ul>
+<li> 在Python中，通常用全部大写的变量名表示常量</li>
+</ul>
+</li>
+</ul>
+<h5 id="字符串和编码"><a href="#字符串和编码" class="headerlink" title="字符串和编码"></a>字符串和编码</h5><ul>
+<li><p>ASCII编码和Unicode编码的区别：</p>
+<p>ASCII编码是1个字节，而Unicode编码通常是2个字节</p>
+</li>
+<li><p> 在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码 </p>
+</li>
+<li><p><code>ord()</code>函数获取字符的整数表示</p>
+<p><code>chr()</code>函数把编码转换为对应的字符 </p>
+</li>
+</ul>
+<p>  ​          <em>如下是chr（）出的星座符号</em>：</p>
+<p>​                  ♈♉♊♋♌♍♎♏♐♑♒♓</p>
+<ul>
+<li><p>Python对<code>bytes</code>类型的数据用带<code>b</code>前缀的单引号或双引号表示 </p>
+<ul>
+<li> 区分<code>&#39;ABC&#39;</code>和<code>b&#39;ABC&#39;</code>，前者是<code>str</code>，后者虽然内容显示得和前者一样，但<code>bytes</code>的每个字符都只占用一个字节 </li>
+<li> 以Unicode表示的<code>str</code>通过<code>encode()</code>方法可以编码为指定的<code>bytes</code> </li>
+<li> 当<code>str</code>和<code>bytes</code>互相转换时，需要指定编码。最常用的编码是<code>UTF-8</code> </li>
+</ul>
+</li>
+<li><p>格式化</p>
+<ul>
+<li> <code>%</code>运算符就是用来格式化字符串的 </li>
+<li>  使用 format() 格式化字符串 ， 传入的参数依次替换字符串内的占位符<code>&#123;0&#125;</code>、<code>&#123;1&#125;</code>…… </li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">%运算符</th>
+<th align="left">替换内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">%d</td>
+<td align="left">整数</td>
+</tr>
+<tr>
+<td align="left">%f</td>
+<td align="left">浮点数</td>
+</tr>
+<tr>
+<td align="left">%s</td>
+<td align="left">字符串</td>
+</tr>
+<tr>
+<td align="left">%x</td>
+<td align="left">十六进制整数</td>
+</tr>
+</tbody></table>
+<p>​          </p>
+<h5 id="使用list和tuple"><a href="#使用list和tuple" class="headerlink" title="使用list和tuple"></a>使用list和tuple</h5><ul>
+<li><p>list</p>
+<ul>
+<li><p>list是一种有序的集合，可以随时添加和删除其中的元素。 </p>
+</li>
+<li><p>使用方括号[]或list（）创建，元素间用逗号分隔</p>
+</li>
+<li><p>列表中各元素类型可以不同，无长度限制</p>
+</li>
+<li><p> 用<code>len()</code>函数可以获得list元素的个数 </p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>函数或方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ls[i] = x</td>
+<td>替换列表ls第i元素为x</td>
+</tr>
+<tr>
+<td>Is[i:j:k]=It</td>
+<td>用列表lt替换ls切片后所对应元素子列表</td>
+</tr>
+<tr>
+<td>del ls[i]</td>
+<td>删除列表Is中第i元素</td>
+</tr>
+<tr>
+<td>del Is[i:j:k]</td>
+<td>删除列表ls中第i到第j以k为步长的元素</td>
+</tr>
+<tr>
+<td>ls += lt</td>
+<td>更新列表Is，将列表lt元素增加到列表ls中</td>
+</tr>
+<tr>
+<td>ls *= n</td>
+<td>更新列表Is，其元素重复n次</td>
+</tr>
+<tr>
+<td>Is.append(x)</td>
+<td>在列表ls后增加一个元素</td>
+</tr>
+<tr>
+<td>Is.clear()</td>
+<td>删除列表ls中所有元素</td>
+</tr>
+<tr>
+<td>Is.copy()</td>
+<td>生成一个新列表，赋值Is中所有元素</td>
+</tr>
+<tr>
+<td>Is.insert(i,x)</td>
+<td>在列表Is的第i位置增加元素x</td>
+</tr>
+<tr>
+<td>Is.pop(i)</td>
+<td>将列表ls中第i位置元素取出并删除该元素</td>
+</tr>
+<tr>
+<td>Is.remove(x)</td>
+<td>将列表Is中出现的第一个元素×删除</td>
+</tr>
+<tr>
+<td>Is.reverse()</td>
+<td>将列表ls中的元素反转</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li> 用索引来访问list中每一个位置的元素 ，正向从0递增，也可以反向从-1递减</li>
+<li> 当索引超出了范围时，Python会报一个<code>IndexError</code>错误，故要确保索引不要越界，最后一个元素的索引是<code>len(classmates) - 1</code>。 </li>
+</ul>
+<ul>
+<li><p>tuple</p>
+<ul>
+<li><p>list是一种序列类型，一旦创建就不能修改</p>
+</li>
+<li><p>使用小括号（）或  tuple（）创建，元素间用逗号分隔</p>
+</li>
+<li><p>可以使用或不使用小括号，但是只有一个元素时，为避免歧义， 必须加其后一个逗号<code>,</code> </p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h5><ul>
+<li><p>形式</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs dts">if <span class="hljs-params">&lt;条件判断<span class="hljs-number">1</span>&gt;</span>:<br>    <span class="hljs-params">&lt;执行<span class="hljs-number">1</span>&gt;</span><br>elif <span class="hljs-params">&lt;条件判断<span class="hljs-number">2</span>&gt;</span>:<br>    <span class="hljs-params">&lt;执行<span class="hljs-number">2</span>&gt;</span><br>elif <span class="hljs-params">&lt;条件判断<span class="hljs-number">3</span>&gt;</span>:<br>    <span class="hljs-params">&lt;执行<span class="hljs-number">3</span>&gt;</span><br><span class="hljs-symbol">else:</span><br>    <span class="hljs-params">&lt;执行<span class="hljs-number">4</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>input（）</p>
+<p> <code>input()</code>返回的数据类型是<code>str</code>，<code>str</code>不能直接和整数比较，必须先把<code>str</code>转换成整数 ，</p>
+<p>可以用 <code>int()</code>函数 </p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">s</span> = input(<span class="hljs-string">&#x27;birth: &#x27;</span>)<br><span class="hljs-attr">birth</span> = int(s)<br></code></pre></td></tr></table></figure>
+<p>也可以用eval（）函数</p>
+</li>
+</ul>
+<h5 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h5><ul>
+<li><p>for…in… 遍历循环</p>
+<figure class="highlight bnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bnf">for <span class="hljs-attribute">&lt;循环变量&gt;</span> in <span class="hljs-attribute">&lt;遍历结构&gt;</span>:<br>	<span class="hljs-attribute">&lt;语句块&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p> while   循环</p>
+</li>
+<li><p><code>range()</code>函数 ： 如<code>range(N)</code>生成的序列是从0开始小于N的整数 </p>
+</li>
+<li><p>break： <code>break</code>语句 提前退出循环 ，只跳出内层循环，外层循环仍然有效</p>
+</li>
+<li><p>continue： 通过<code>continue</code>语句，跳过当前的这次循环，直接开始下一次循环 </p>
+</li>
+<li></li>
+<li><p> <code>Ctrl+C</code>  退出程序 </p>
+</li>
+</ul>
+<h5 id="使用dict和set"><a href="#使用dict和set" class="headerlink" title="使用dict和set"></a>使用dict和set</h5><ul>
+<li><p>dict  </p>
+<ul>
+<li><p> 字典：dict，也称为map，使用键-值（key-value）存储，具有极快的查找速度</p>
+</li>
+<li><p>字典类型是”映射”的体现 ．</p>
+<p>键值对：键是数据索引的扩展 ．</p>
+<p>字典是键值对的集合，键值对之间无序 ·</p>
+<p>采用大括号{}和dict()创建，键值对用冒号：表示 {&lt;键1&gt;：&lt;值1&gt;，&lt;键2&gt;：&lt;值2&gt;， &lt;键n&gt;:&lt;值n&gt;} </p>
+</li>
+<li><p> 多次对一个key放入value，后面的值会把前面的值冲掉 </p>
+</li>
+<li><p> dict的key必须是不可变对象， 字符串、整数等都是不可变的，可以作为key；而list是可变的，不能作为key </p>
+</li>
+<li><p>如果key不存在，dict就会报错 ，解决：</p>
+<p> 一是通过<code>in</code>判断key是否存在</p>
+<p> 二是通过dict提供的<code>get()</code>方法，如果key不存在，可以返回<code>None</code>，或者自己指定的value </p>
+</li>
+<li><p>函数方法</p>
+<p>​     <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image001.png" alt="函数方法">  </p>
+</li>
+</ul>
+</li>
+<li><p>set</p>
+<ul>
+<li><p>集合元素不可更改，不能是可变数据类型， 在set中，没有重复的key， 可以重复添加，但不会有效果 </p>
+</li>
+<li><p>集合是多个元素的无序组合 ．</p>
+<p>集合用大括号{}表示，元素间用逗号分隔 </p>
+<p>建立集合类型用{}或set{} ．</p>
+<p>建立空集合类型，必须使用set{}</p>
+</li>
+<li><p>操作符</p>
+<table>
+<thead>
+<tr>
+<th>操作函数或方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>S.add(x)</td>
+<td>如果不在集合S中，将x加到S</td>
+</tr>
+<tr>
+<td>S.discard(x)</td>
+<td>移除S中元素x，如不在集合s中，不报错</td>
+</tr>
+<tr>
+<td>S.remove(x)</td>
+<td>移除S中元素x，如不在集合s中，报错KeyError</td>
+</tr>
+<tr>
+<td>S.clear()</td>
+<td>移除S中所有元素</td>
+</tr>
+<tr>
+<td>S.pop()</td>
+<td>随机返回S的一个元素，跟新S，若S为空产生KeyError</td>
+</tr>
+<tr>
+<td>S.copy()</td>
+<td>返回集合S的一个副本</td>
+</tr>
+<tr>
+<td>len(S)</td>
+<td>返回集合S的元素个数</td>
+</tr>
+<tr>
+<td>x in S</td>
+<td>判断S中元素×，×在集合S中，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>x not in S</td>
+<td>判断S中元素×，x不在集合S中，返回True，否则返回False</td>
+</tr>
+<tr>
+<td>set(x)</td>
+<td>将其他类型变量×转变为集合类型</td>
+</tr>
+</tbody></table>
+<p>​      </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="5、函数"><a href="#5、函数" class="headerlink" title="5、函数"></a>5、函数</h3><h5 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h5><ul>
+<li><p> 交互式命令行通过<code>help(abs)</code>查看<code>abs</code>函数的帮助信息 </p>
+</li>
+<li><p>数据类型转换</p>
+<p> <code>int()</code>函数可以把其他数据类型转换为整数 </p>
+<p><code>float()</code>转化为浮点型</p>
+<p><code>str()</code>转化为字符串</p>
+<p><code>bool()</code></p>
+</li>
+<li><p>函数名其实就是指向一个函数对象的引用，也可以把函数名赋给一个变量，相当于给这个函数起了一个“别名” </p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-attr">a</span> = abs <span class="hljs-comment"># 变量a指向abs函数</span><br></code></pre></td></tr></table></figure>
+<h5 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h5></li>
+<li><p>形式</p>
+</li>
+</ul>
+<figure class="highlight bnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bnf">def<span class="hljs-attribute">&lt;函数名&gt;</span>（<span class="hljs-attribute">&lt;参数（0个或多个）&gt;</span>）： <br>	<span class="hljs-attribute">&lt;函数体&gt;</span> <br>	return<span class="hljs-attribute">&lt;返回值&gt;</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>空函数</p>
+<p> 如果想定义一个什么事也不做的空函数，可以用<code>pass</code>语句 ， <code>pass</code>可以用来作为占位符，先放一个<code>pass</code>，让代码能够运行 </p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">nop</span><span class="hljs-params">()</span></span><span class="hljs-symbol">:</span><br>    pass<br></code></pre></td></tr></table></figure></li>
+<li><p>参数检查</p>
+<ul>
+<li><p> 如果有必要，可以先对参数的数据类型做检查 </p>
+</li>
+<li><p> 调用函数时，如果参数个数不对，Python解释器会自动检查出来，并抛出<code>TypeError</code></p>
+</li>
+</ul>
+</li>
+<li><p>返回多个值</p>
+<ul>
+<li><p>函数体内部可以用<code>return</code>随时返回函数结果</p>
+<p>函数执行完毕也没有<code>return</code>语句时，自动<code>return None</code></p>
+</li>
+<li><p>Python的函数返回多值,实质是返回一个tuple</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h5><ul>
+<li><p>位置参数</p>
+</li>
+<li><p>默认参数（可选参数）</p>
+<p>可选参数放在必选参数后面</p>
+<p>当函数有多个参数时，把变化大的参数放前面，变化小的参数放后面。变化小的参数就可以作为默认参数 </p>
+<p><em>定义默认参数要牢记一点：默认参数必须指向不变对象</em></p>
+</li>
+<li><p>可变参数</p>
+<pre><code>* 定义可变参数和定义一个list或tuple参数相比，仅仅在参数前面加了一个`*`号。在函数内部，参数`numbers`接收到的是一个tuple，因此，函数代码完全不变。但是，调用该函数时，可以传入任意个参数，包括0个参数
+*  如果已经有一个list或者tuple，要调用一个可变参 数， 允许在list或tuple前面加一个`*`号，把list或tuple的元素变成可变参数传进去 </code></pre>
+</li>
+<li><p>关键字参数 </p>
+<ul>
+<li><p>可变参数允许你传入0个或任意个参数，这些可变参数在函数调用时自动组装为一个tuple。而关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">person</span>(<span class="hljs-params">name, age, **kw</span>):</span><br>    print(<span class="hljs-string">&#x27;name:&#x27;</span>, name, <span class="hljs-string">&#x27;age:&#x27;</span>, age, <span class="hljs-string">&#x27;other:&#x27;</span>, kw)<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>命名关键字参数</p>
+<ul>
+<li> 和关键字参数<code>**kw</code>不同，命名关键字参数需要一个特殊分隔符<code>*</code>，<code>*</code>后面的参数被视为命名关键字参数 </li>
+<li> 如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符<code>*</code> </li>
+<li> 命名关键字参数必须传入参数名，这和位置参数不同。如果没有传入参数名，调用将报错 </li>
+<li> 名关键字参数可以有缺省值，从而简化调用 ， 命名关键字参数具有默认值，调用时，可不传入此参数 </li>
+<li> 使用命名关键字参数时，要特别注意，如果没有可变参数，就必须加一个<code>*</code>作为特殊分隔符。如果缺少<code>*</code>，Python解释器将无法识别位置参数和命名关键字参数 </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>参数组合</p>
+<ul>
+<li> 在Python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这5种参数都可以组合使用。但是，参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数 </li>
+<li> 对于任意函数，都可以通过类似<code>func(*args, **kw)</code>的形式调用 </li>
+</ul>
+</li>
+<li><p>注意：</p>
+<ul>
+<li>注意定义可变参数和关键字参数的语法：</li>
+</ul>
+<p>​     <code>*args</code>是可变参数，args接收的是一个tuple；</p>
+<p>   <code>**kw</code>是关键字参数，kw接收的是一个dict。</p>
+<ul>
+<li><p>调用函数时如何传入可变参数和关键字参数的语法：</p>
+<p>可变参数既可以直接传入：<code>func(1, 2, 3)</code>，又可以先组装list或tuple，再通过<code>*args</code>传入：<code>func(*(1, 2, 3))</code>；</p>
+<p>关键字参数既可以直接传入：<code>func(a=1, b=2)</code>，又可以先组装dict，再通过<code>**kw</code>传入：<code>func(**&#123;&#39;a&#39;: 1, &#39;b&#39;: 2&#125;)</code></p>
+</li>
+<li><p> 定义命名的关键字参数在没有可变参数的情况下记得写分隔符<code>*</code>，否则定义的将是位置参数 </p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h5><ul>
+<li>使用递归函数的优点是逻辑简单清晰，缺点是过深的调用会导致栈溢出。</li>
+<li>针对尾递归优化的语言可以通过尾递归防止栈溢出。尾递归事实上和循环是等价的，没有循环语句的编程语言只能通过尾递归实现循环。</li>
+<li>Python标准的解释器没有针对尾递归做优化，任何递归函数都存在栈溢出的问题。</li>
+</ul>
+<h3 id="6、高级特性"><a href="#6、高级特性" class="headerlink" title="6、高级特性"></a>6、高级特性</h3><h5 id="切片（Slice）"><a href="#切片（Slice）" class="headerlink" title="切片（Slice）"></a>切片（Slice）</h5><ul>
+<li><p>L[a  :  b ：c]      表示，从索引<code>a</code>开始取，直到索引<code>b</code>为止，但不包括索引<code>b</code> ，步长为<code>c</code>,<code>a、b</code>可以省略</p>
+</li>
+<li><p> 也支持倒数切片 ，倒数第一个索引为-1</p>
+</li>
+<li><p>L <code>[:]</code>    复制一个list </p>
+</li>
+<li><p>元组、字符串也可以切片，操作结果还是元组、字符串</p>
+</li>
+</ul>
+<h5 id="迭代（Iteration）"><a href="#迭代（Iteration）" class="headerlink" title="迭代（Iteration）"></a>迭代（Iteration）</h5><ul>
+<li><p> 给定一个list或tuple，可以通过<code>for</code>循环遍历这个list或tuple，称为迭代 </p>
+</li>
+<li><p>dict</p>
+<ul>
+<li><p>迭代key，<code>for key in d:</code></p>
+</li>
+<li><p> 迭代value，可以用<code>for value in d.values()</code> </p>
+</li>
+<li><p> 同时迭代key和value，可以用<code>for k, v in d.items()</code> </p>
+</li>
+</ul>
+</li>
+<li><p> 使用<code>for</code>循环时，只要作用于一个可迭代对象，<code>for</code>循环就可以正常运行，不太关心该对象究竟是list还是其他数据类型 </p>
+</li>
+<li><p>判断一个对象是可迭代对象 : 通过collections模块的Iterable类型判断 </p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">from</span> collections import <span class="hljs-keyword">Iterable</span><br>	isinstance(<span class="hljs-string">&#x27;abc&#x27;</span>, <span class="hljs-keyword">Iterable</span>) <span class="hljs-comment"># str是否可迭代</span><br></code></pre></td></tr></table></figure></li>
+<li><p>Python内置的<code>enumerate</code>函数可以把一个list变成索引-元素对，可以在<code>for</code>循环中同时迭代索引和元素本身 </p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs less"><span class="hljs-selector-tag">for</span> <span class="hljs-selector-tag">i</span>, <span class="hljs-selector-tag">value</span> <span class="hljs-selector-tag">in</span> <span class="hljs-selector-tag">enumerate</span>([<span class="hljs-string">&#x27;A&#x27;</span>, <span class="hljs-string">&#x27;B&#x27;</span>, <span class="hljs-string">&#x27;C&#x27;</span>]):<br>	<span class="hljs-selector-tag">print</span>(i, value)<br></code></pre></td></tr></table></figure>
+<h5 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h5></li>
+<li><p><code>list(range(a, b))</code>    生成从a到b的列表，包括a不包括b</p>
+</li>
+<li><p><code> [x * x for x in range(1, 11)]</code>      生成的元素<code>x * x</code>放到前面，后面跟<code>for</code>循环 </p>
+</li>
+<li><p><code>[x * x for x in range(1, 11) if x % 2 == 0]</code>     if判断 ,做出 筛选 </p>
+</li>
+<li><p><code> [m + n for m in &#39;ABC&#39; for n in &#39;XYZ&#39;]</code>    两层循环，生成全排列 </p>
+</li>
+<li><p> <code> [k + &#39;=&#39; + v for k, v in d.items()]</code>      使用两个变量来生成list </p>
+</li>
+<li><p><code>[s.lower() for s in L]</code> list中所有的字符串变成小写 </p>
+</li>
+<li><p>在一个列表生成式中，<code>for</code>前面的<code>if ... else</code>是表达式，而<code>for</code>后面的<code>if</code>是过滤条件，不能带<code>else</code> </p>
+<ul>
+<li><code>[x if x % 2 == 0 else -x for x in range(1, 11)]</code></li>
+<li><code> [x for x in range(1, 11) if x % 2 == 0]</code></li>
+</ul>
+</li>
+</ul>
+<h5 id="生成器-generator"><a href="#生成器-generator" class="headerlink" title="生成器 ( generator )"></a>生成器 ( generator )</h5><ul>
+<li><p>创建了一个generator :</p>
+<ul>
+<li>把一个列表生成式的<code>[]</code>改成<code>()</code> </li>
+<li> 如果一个函数定义中包含<code>yield</code>关键字 </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>打印 generator的每一个元素 ：</p>
+<ul>
+<li> 通过<code>next()</code>函数 </li>
+<li> <code>for</code>循环 （ generator也是可迭代对象 ）</li>
+</ul>
+</li>
+<li><p>  区分普通函数和generator函数，普通函数调用直接返回结果 ，generator函数的“调用”实际返回一个generator对象 </p>
+</li>
+</ul>
+<h5 id="迭代器（-Iterator-）"><a href="#迭代器（-Iterator-）" class="headerlink" title="迭代器（ Iterator ）"></a>迭代器（ Iterator ）</h5><ul>
+<li>可迭代对象：<code>Iterable</code>       可以直接作用于<code>for</code>循环的对象 </li>
+</ul>
+<p>​        迭代器：<code>Iterator</code>        可以作用于<code>for</code>循环 ，也可以被<code>next()</code>函数调用并不断返回下一个值的对象 </p>
+<p>​         可以使用<code>isinstance()</code>判断一个对象是否是<code>Iterable</code>对象 </p>
+<p>​        可以使用<code>isinstance()</code>判断一个对象是否是<code>Iterator</code>对象 </p>
+<ul>
+<li><p>生成器都是<code>Iterator</code>对象，但<code>list</code>、<code>dict</code>、<code>str</code>虽然是<code>Iterable</code>，却不是<code>Iterator</code>。</p>
+<p>把<code>list</code>、<code>dict</code>、<code>str</code>等<code>Iterable</code>变成<code>Iterator</code>    ， 使用<code>iter()</code>函数</p>
+</li>
+<li><p> Iterator对象可以被<code>next()</code>函数调用并不断返回下一个数据，直到没有数据时抛出<code>StopIteration</code>错误 </p>
+</li>
+<li><p> <code>Iterator</code>的计算 ， 只有在需要返回下一个数据时它才会计算</p>
+</li>
+</ul>
+<h3 id="7、函数式编程"><a href="#7、函数式编程" class="headerlink" title="7、函数式编程"></a>7、函数式编程</h3><h5 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h5><ul>
+<li><p>变量可以指向函数</p>
+<p><code>f = abs</code>   变量<code>f</code>指向了<code>abs</code>函数本身，直接调用<code>abs()</code>函数和调用变量<code>f()</code>完全相同 ，f相当于abs的小名</p>
+</li>
+<li><p>函数名也是变量</p>
+<p>（ <code>abs</code>函数实际上是定义在<code>import builtins</code>模块中的，所以要让修改<code>abs</code>变量的指向在其它模块也生效，要用<code>import builtins; builtins.abs = 10</code> ）</p>
+</li>
+<li><p>传入函数</p>
+<p> 把函数作为参数传入，这样的函数称为高阶函数，函数式编程就是指这种高度抽象的编程范式 </p>
+</li>
+</ul>
+<h6 id="map-reduce"><a href="#map-reduce" class="headerlink" title="map/reduce"></a>map/reduce</h6><ul>
+<li><p><code>map()</code>函数</p>
+<p>接收两个参数，一个是函数，一个是<code>Iterable</code>，<code>map</code>将传入的函数依次作用到序列的每个元素，并把结果作为新的<code>Iterator</code>返回 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">f</span>(<span class="hljs-params">x</span>):</span><br>	<span class="hljs-keyword">return</span> x * x<br>r = <span class="hljs-built_in">map</span>(f, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>])<br><span class="hljs-built_in">list</span>(r)<br>&gt;&gt;[<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>, <span class="hljs-number">36</span>, <span class="hljs-number">49</span>, <span class="hljs-number">64</span>, <span class="hljs-number">81</span>]<br></code></pre></td></tr></table></figure>
+<p> <code>map()</code>作为高阶函数，事实上它把运算规则抽象 ， 还可以计算任意复杂的函数 </p>
+</li>
+<li><p><code>reduce（）</code></p>
+<p>把一个函数作用在一个序列<code>[x1, x2, x3, ...]</code>上，这个函数必须接收两个参数，<code>reduce</code>把结果继续和序列的下一个元素做累积计算 :</p>
+<p><code>reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">reduce</span><span class="hljs-params">(add, [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>])</span></span>    <span class="hljs-comment">//序列求和</span><br></code></pre></td></tr></table></figure>
+<h6 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h6></li>
+<li><p> <code>filter()</code>函数用于过滤序列 </p>
+</li>
+<li><p> 和<code>map()</code>类似，<code>filter()</code>也接收一个函数和一个序列。和<code>map()</code>不同的是，<code>filter()</code>把传入的函数依次作用于每个元素，然后根据返回值是<code>True</code>还是<code>False</code>决定保留还是丢弃该元素 </p>
+</li>
+</ul>
+<h6 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h6><ul>
+<li> <code>sorted()</code>函数可以对list进行排序 </li>
+<li> <code>sorted()</code>函数也是一个高阶函数，它还可以接收一个<code>key</code>函数来实现自定义的排序 ， key指定的函数将作用于list的每一个元素上，并根据key函数返回的结果进行排序 </li>
+<li> <code> sorted([&#39;bob&#39;, &#39;about&#39;, &#39;Zoo&#39;, &#39;Credit&#39;], key=str.lower, reverse=True)</code>     进行反向排序，不必改动key函数，可以传入第三个参数<code>reverse=True</code> </li>
+</ul>
+<h5 id="返回函数"><a href="#返回函数" class="headerlink" title="返回函数"></a>返回函数</h5><ul>
+<li>函数作为返回值</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">lazy_sum</span><span class="hljs-params">(*args)</span></span><span class="hljs-symbol">:</span><br>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum</span><span class="hljs-params">()</span></span><span class="hljs-symbol">:</span><br>        ax = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> <span class="hljs-symbol">args:</span><br>            ax = ax + n<br>        <span class="hljs-keyword">return</span> ax<br>    <span class="hljs-keyword">return</span> sum<br>f = lazy_sum(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>)<br></code></pre></td></tr></table></figure>
+<p> 在函数<code>lazy_sum</code>中又定义了函数<code>sum</code>，并且，内部函数<code>sum</code>可以引用外部函数<code>lazy_sum</code>的参数和局部变量，当<code>lazy_sum</code>返回函数<code>sum</code>时，相关参数和变量都保存在返回的函数中 ，此被称为“闭包”</p>
+<ul>
+<li>闭包<ul>
+<li> 返回闭包时牢记：返回函数不要引用任何循环变量，或者后续会发生变化的变量</li>
+</ul>
+</li>
+</ul>
+<h5 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h5><p><code> list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))</code></p>
+<ul>
+<li> 匿名函数<code>lambda x: x * x</code>   , 关键字<code>lambda</code>表示匿名函数，冒号前面的<code>x</code>表示函数参数 </li>
+<li> 匿名函数有个限制，就是只能有一个表达式，不用写<code>return</code>，返回值就是该表达式的结果 </li>
+<li> 匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数 , 也可以把匿名函数作为返回值返回 </li>
+</ul>
+<h5 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h5><ul>
+<li> 在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator） </li>
+<li> 本质上，decorator就是一个返回函数的高阶函数 </li>
+</ul>
+<h5 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h5><ul>
+<li><p> 偏函数（Partial function） </p>
+</li>
+<li><p> <code>functools.partial </code>  创建一个偏函数 , 把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单 </p>
+</li>
+</ul>
+<h3 id="8、模块"><a href="#8、模块" class="headerlink" title="8、模块"></a>8、模块</h3><ul>
+<li><p>模块是一组Python代码的集合，可以使用其他模块，也可以被其他模块使用 </p>
+</li>
+<li><p>创建自己的模块时，要注意：</p>
+<ul>
+<li>模块名要遵循Python变量命名规范，不要使用中文、特殊字符；</li>
+<li>模块名不要和系统模块名冲突，最好先查看系统是否已存在该模块，检查方法是在Python交互环境执行<code>import abc</code>，若成功则说明系统存在此模块。</li>
+</ul>
+</li>
+</ul>
+<h5 id="使用模块"><a href="#使用模块" class="headerlink" title="使用模块"></a>使用模块</h5><ul>
+<li><p>Python模块的标准文件模板 </p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs vala"><span class="hljs-meta">#!/usr/bin/env python3</span><br><span class="hljs-meta"># -*- coding: utf-8 -*-</span><br><br><span class="hljs-string">&#x27; a test module &#x27;</span><br><br>__author__ = <span class="hljs-string">&#x27;name&#x27;</span><br><br></code></pre></td></tr></table></figure></li>
+<li><p>方法：</p>
+<ul>
+<li><p>导入模块</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-keyword">import</span> sys<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p> 外部不需要引用的函数全部定义成private，只有外部需要引用的函数才定义为public </p>
+</li>
+<li><p>作用域</p>
+<ul>
+<li> 类似<code>_xxx</code>和<code>__xxx</code>这样的函数或变量就是非公开的（private），不应该被直接引用，比如<code>_abc</code>，<code>__abc</code>等；</li>
+<li> 类似<code>__xxx__</code>这样的变量是特殊变量，可以被直接引用，但是有特殊用途，比如上面的<code>__author__</code>，<code>__name__</code>就是特殊变量，<code>hello</code>模块定义的文档注释也可以用特殊变量<code>__doc__</code>访问，自己的变量一般不要用这种变量名  </li>
+<li> 正常的函数和变量名是公开的（public），可以被直接引用，比如：<code>abc</code>，<code>x123</code>，<code>PI</code>等； </li>
+</ul>
+</li>
+</ul>
+<h5 id="安装第三方模块"><a href="#安装第三方模块" class="headerlink" title="安装第三方模块"></a>安装第三方模块</h5><ul>
+<li><p> 在Python中，安装第三方模块，是通过包管理工具pip完成 </p>
+</li>
+<li><p>安装常用模块</p>
+<p> <code>Anaconda</code> 一个基于Python的数据处理和科学计算平台，内置了许多非常有用的第三方库 </p>
+</li>
+<li><p>模块搜索路径</p>
+<p> 添加搜索目录的两种方法 ：</p>
+<ul>
+<li><p>直接修改<code>sys.path</code>，添加要搜索的目录： </p>
+<p>（ 运行时修改，运行结束后失效 ）</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xl"><span class="hljs-keyword">import</span> sys<br>sys.<span class="hljs-built_in">path</span>.append(<span class="hljs-string">&#x27;/Users/michael/my_py_scripts&#x27;</span>)<br></code></pre></td></tr></table></figure></li>
+<li><p> 设置环境变量<code>PYTHONPATH</code>，环境变量的内容会被自动添加到模块搜索路径中 </p>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%80%83%E6%A0%B8%E5%88%9D%E6%88%98/">考核初战</a>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/16/00010-python%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E8%AF%AD%E9%9F%B3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">python实践——语音</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/12/00009-ROS%E5%AD%A6%E4%B9%A0/">
+                        <span class="hidden-mobile">ROS</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'icy-dark';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'zyxyling/share');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

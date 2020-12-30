@@ -1,0 +1,556 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>python实践——语音 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>zyxyling</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/5.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="python实践——语音">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-16 00:06" pubdate>
+        April 16, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      679 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">python实践——语音</h1>
+            
+            <div class="markdown-body">
+              <h1 id="python实践——语音"><a href="#python实践——语音" class="headerlink" title="python实践——语音"></a>python实践——语音</h1><h2 id="一、功能说明文档"><a href="#一、功能说明文档" class="headerlink" title="一、功能说明文档"></a>一、功能说明文档</h2><p>[TOC]</p>
+<h4 id="主要功能——语音识别与搜索"><a href="#主要功能——语音识别与搜索" class="headerlink" title="主要功能——语音识别与搜索"></a>主要功能——语音识别与搜索</h4><ol>
+<li><p><strong>选择语音种类</strong></p>
+<p><code>choose language</code></p>
+<p>提供五种选择,</p>
+<p>在<code>Write Here</code>处，填写选项前的数字，</p>
+<p>如：1537</p>
+</li>
+</ol>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">1537:普通话</span><br><span class="hljs-section">1737:英语</span><br><span class="hljs-section">1637:粤语</span><br><span class="hljs-section">1837:四川话</span><br><span class="hljs-section">1936:普通话远场 </span><br></code></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li><p><strong>录音过程</strong></p>
+<p>显示<code>Please speak...</code></p>
+<p>大约5秒后，结束录音</p>
+<p>显示<code>end</code></p>
+</li>
+</ol>
+<ol start="3">
+<li><p><strong>音频识别阶段</strong></p>
+<p>显示<code>Please wait...</code></p>
+</li>
+</ol>
+<ol start="4">
+<li><p><strong>识别结果显示</strong></p>
+<p>在<code>result</code>处，输出音频信息</p>
+<p>如 示例1，西北工业大学</p>
+</li>
+</ol>
+<ol start="5">
+<li><p><strong>搜索界面</strong></p>
+<p>使用<code>webbrowser</code>指定浏览器并根据音频关键词展开搜索</p>
+<p>输出信息同时，通过预先设定的搜索引擎（百度）展开搜索</p>
+<p>跳出搜索后的网页界面</p>
+</li>
+</ol>
+<ol start="6">
+<li><p><strong>继续识别选择</strong></p>
+<p>界面显示<code>Try Again ?(y/n)</code></p>
+</li>
+</ol>
+<ul>
+<li>选择y， 则重复起始过程，选择语言，继续进行</li>
+<li>选择n，退出操作</li>
+</ul>
+<h2 id="二、效果图"><a href="#二、效果图" class="headerlink" title="二、效果图"></a>二、效果图</h2><p>![pycharm界面](C:\Users\lenovo\Desktop\2020-04-16 (10).png)</p>
+<p><img src="C:\Users\lenovo\Desktop\选择界面.jpg" alt="选择界面"></p>
+<p>![示例1](C:\Users\lenovo\Desktop\2020-04-16 (11).png)</p>
+<p>![示例2](C:\Users\lenovo\Desktop\2020-04-16 (12).png)</p>
+<p>![示例3](C:\Users\lenovo\Desktop\2020-04-16 (13).png)</p>
+<p><img src="C:\Users\lenovo\Desktop\选择y或n.jpg" alt="选择y或n"></p>
+<h2 id="三、源代码"><a href="#三、源代码" class="headerlink" title="三、源代码"></a>三、源代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> base64<br><span class="hljs-keyword">import</span> time<br><span class="hljs-keyword">import</span> wave<br><span class="hljs-keyword">from</span> pyaudio <span class="hljs-keyword">import</span> PyAudio, paInt16<br><span class="hljs-keyword">import</span> webbrowser<br><br><br>framerate = <span class="hljs-number">16000</span><br>num_samples = <span class="hljs-number">2000</span><br>channels = <span class="hljs-number">1</span><br>sampwidth = <span class="hljs-number">2</span><br>FILEPATH = <span class="hljs-string">&#x27;sound_test.wav&#x27;</span><br><br><br>base_url = <span class="hljs-string">&quot;https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&amp;client_id=%s&amp;client_secret=%s&quot;</span><br>APIKey = <span class="hljs-string">&quot;yG1NH4rUGgpQB6jTCsfIhLP9&quot;</span><br>SecretKey = <span class="hljs-string">&quot;CA8D90jCuZSGWmSCzXl84Z58eccev50G&quot;</span><br><br>HOST = base_url % (APIKey, SecretKey)<br><br><br><span class="hljs-comment"># 获取token</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_Token</span>(<span class="hljs-params">host</span>):</span><br>    res = requests.post(host)<br>    <span class="hljs-keyword">return</span> res.json()[<span class="hljs-string">&#x27;access_token&#x27;</span>]<br><br><br><span class="hljs-comment"># 保存音频文档</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">wave_file</span>(<span class="hljs-params">filepath, data</span>):</span><br>    wf = wave.<span class="hljs-built_in">open</span>(filepath, <span class="hljs-string">&#x27;wb&#x27;</span>)<br>    wf.setnchannels(channels)<br>    wf.setsampwidth(sampwidth)<br>    wf.setframerate(framerate)<br>    wf.writeframes(<span class="hljs-string">b&#x27;&#x27;</span>.join(data))<br>    wf.close()<br><br><br><span class="hljs-comment"># 录音</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_record</span>():</span><br>    pa = PyAudio()<br>    stream = pa.<span class="hljs-built_in">open</span>(<span class="hljs-built_in">format</span>=paInt16, channels=channels,<br>                     rate=framerate, <span class="hljs-built_in">input</span>=<span class="hljs-literal">True</span>, frames_per_buffer=num_samples)<br>    my_buf = []<br>    t = time.time()<br>    print(<span class="hljs-string">&#x27;Please speak...&#x27;</span>)<br>    <span class="hljs-keyword">while</span> time.time() &lt; t + <span class="hljs-number">4</span>:<br>        string_audio_data = stream.read(num_samples)<br>        my_buf.append(string_audio_data)<br>    print(<span class="hljs-string">&#x27;end.&#x27;</span>)<br>    wave_file(FILEPATH, my_buf)<br>    stream.close()<br><br><br><span class="hljs-comment">#获取音频数据</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_audio</span>(<span class="hljs-params">file</span>):</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(file, <span class="hljs-string">&#x27;rb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>        data = f.read()<br>    <span class="hljs-keyword">return</span> data<br><br><br><span class="hljs-comment">#上传音频文件</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sound_text</span>(<span class="hljs-params">speech_data, token, dev_pid=<span class="hljs-number">1537</span></span>):</span><br>    FORMAT = <span class="hljs-string">&#x27;wav&#x27;</span><br>    RATE = <span class="hljs-string">&#x27;16000&#x27;</span><br>    CHANNEL = <span class="hljs-number">1</span><br>    CUID = <span class="hljs-string">&#x27;sound_test&#x27;</span><br>    SPEECH = base64.b64encode(speech_data).decode(<span class="hljs-string">&#x27;utf-8&#x27;</span>)<br><br>    data = &#123;<br>        <span class="hljs-string">&#x27;format&#x27;</span>: FORMAT,<br>        <span class="hljs-string">&#x27;rate&#x27;</span>: RATE,<br>        <span class="hljs-string">&#x27;channel&#x27;</span>: CHANNEL,<br>        <span class="hljs-string">&#x27;cuid&#x27;</span>: CUID,<br>        <span class="hljs-string">&#x27;len&#x27;</span>: <span class="hljs-built_in">len</span>(speech_data),<br>        <span class="hljs-string">&#x27;speech&#x27;</span>: SPEECH,<br>        <span class="hljs-string">&#x27;token&#x27;</span>: token,<br>        <span class="hljs-string">&#x27;dev_pid&#x27;</span>: dev_pid<br>    &#125;<br>    url = <span class="hljs-string">&#x27;https://vop.baidu.com/server_api&#x27;</span><br>    headers = &#123;<span class="hljs-string">&#x27;Content-Type&#x27;</span>: <span class="hljs-string">&#x27;application/json&#x27;</span>&#125;<br>    print(<span class="hljs-string">&#x27;Please wait...&#x27;</span>)<br>    print(<span class="hljs-string">&quot;result:&quot;</span>)<br>    r = requests.post(url, json=data, headers=headers)<br>    Result = r.json()<br>    <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;result&#x27;</span> <span class="hljs-keyword">in</span> Result:<br>        <span class="hljs-keyword">return</span> Result[<span class="hljs-string">&#x27;result&#x27;</span>][<span class="hljs-number">0</span>]<br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> Result<br><br><span class="hljs-comment"># 连接浏览器进行搜索</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">openbrowser</span>(<span class="hljs-params">text</span>):</span><br>    webbrowser.open_new_tab(<span class="hljs-string">&#x27;https://www.baidu.com/s?wd=%s&#x27;</span> % text)<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    tick = <span class="hljs-string">&#x27;y&#x27;</span><br>    <span class="hljs-keyword">while</span> tick.lower() == <span class="hljs-string">&#x27;y&#x27;</span>:<br>        print(<span class="hljs-string">&#x27;Please choose language ：&#x27;</span>)<br>        devpid = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;1537:普通话\n1737:英语\n1637:粤语\n1837:四川话\n1936:普通话远场\n     Write Here : &#x27;</span>)<br>        get_record()<br>        TOKEN = get_Token(HOST)<br>        speech = get_audio(FILEPATH)<br>        result = sound_text(speech, TOKEN, <span class="hljs-built_in">int</span>(devpid))<br>        print(result)<br>        <span class="hljs-keyword">if</span> <span class="hljs-built_in">type</span>(result) == <span class="hljs-built_in">str</span>:<br>            openbrowser(result.strip(<span class="hljs-string">&#x27;，&#x27;</span>))<br>        tick = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;Try Again ?(y/n):&#x27;</span>)<br><br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%80%83%E6%A0%B8%E5%88%9D%E6%88%98/">考核初战</a>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/18/00011-python%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94%E7%83%AD%E5%8A%9B%E5%9B%BE/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">python实践——热力图</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/15/00006-python%E5%AD%A6%E4%B9%A0/">
+                        <span class="hidden-mobile">python学习</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'icy-dark';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'zyxyling/share');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

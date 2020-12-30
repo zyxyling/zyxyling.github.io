@@ -1,0 +1,579 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>vim - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>zyxyling</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/4.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="vim">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-28 00:06" pubdate>
+        March 28, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">vim</h1>
+            
+            <div class="markdown-body">
+              <h1 id="学习vim的基本操作"><a href="#学习vim的基本操作" class="headerlink" title="学习vim的基本操作"></a>学习vim的基本操作</h1><p>[TOC]</p>
+<h4 id="1、vim的三种模式"><a href="#1、vim的三种模式" class="headerlink" title="1、vim的三种模式"></a>1、vim的三种模式</h4><p>​    命令模式 </p>
+<p>​    输入模式  </p>
+<p>​    末行模式</p>
+<h4 id="2、模式转化"><a href="#2、模式转化" class="headerlink" title="2、模式转化"></a>2、模式转化</h4><p>​    </p>
+<pre><code>* 编辑到输入</code></pre>
+<p>​        i: 在当前光标所在字符的前面，转为输入模式；    </p>
+<p>​        a: 在当前光标所在字符的后面，转为输入模式；    </p>
+<p>​        o: 在当前光标所在行的下方，新建一行，并转为输入模式；    </p>
+<p>​         I：在当前光标所在行的行首，转换为输入模式   </p>
+<p>​         A：在当前光标所在行的行尾，转换为输入模式    </p>
+<p>​         O：在当前光标所在行的上方，新建一行，并转为输入模式；</p>
+<ul>
+<li>输入到编辑  ：           ESC</li>
+<li>编辑 到末行  ：             ：</li>
+<li>末行到编辑：        ESC,ESC</li>
+</ul>
+<h4 id="3、查找"><a href="#3、查找" class="headerlink" title="3、查找"></a>3、查找</h4><p>​      /text　查找text，按n健查找下一个，按N健查找前一个。</p>
+<p>​      ?text　查找text，反向查找，按n健查找下一个，按N健查找前一个。</p>
+<p>​       vim中有一些特殊字符在查找时需要转义　　.*[]^%/?~$</p>
+<p>​       :set ignorecase　忽略大小写的查找</p>
+<p>​       :set noignorecase　不忽略大小写的查找 ，查找很长的词，如果一个词很长，键入麻烦，可以将光标移动到该词上，按*或#键即可以该单词进行搜索，相当于/搜索。而#命令相当于?搜索。</p>
+<p>​       :set hlsearch　高亮搜索结果，所有结果都高亮显示，而不是只显示一个匹配。</p>
+<p>​       :set nohlsearch　关闭高亮搜索显示</p>
+<p>​       :nohlsearch　关闭当前的高亮显示，如果再次搜索或者按下n或N键，则会再次高亮。</p>
+<p>​        :set incsearch　逐步搜索模式，对当前键入的字符进行搜索而不必等待键入完成。</p>
+<p>​        :set wrapscan　重新搜索，在搜索到文件头或尾时，返回继续搜索，默认开启。</p>
+<h4 id="4、插入"><a href="#4、插入" class="headerlink" title="4、插入"></a>4、插入</h4><p>i 在当前位置前插入</p>
+<p>I 在当前行首插入</p>
+<p>a 在当前位置后插入</p>
+<p>A 在当前行尾插入</p>
+<p>o 在当前行之后插入一行</p>
+<p>O 在当前行之前插入一行</p>
+<h4 id="5、替换"><a href="#5、替换" class="headerlink" title="5、替换"></a>5、替换</h4><p>ra 将当前字符替换为a，当期字符即光标所在字符。</p>
+<p>s/old/new/ 用old替换new，替换当前行的第一个匹配</p>
+<p>s/old/new/g 用old替换new，替换当前行的所有匹配</p>
+<p>%s/old/new/ 用old替换new，替换所有行的第一个匹配</p>
+<p>%s/old/new/g 用old替换new，替换整个文件的所有匹配</p>
+<p>:10,20 s/^/    /g 在第10行知第20行每行前面加四个空格，用于缩进。</p>
+<p>ddp 交换光标所在行和其下紧邻的一行。</p>
+<h4 id="6、删除"><a href="#6、删除" class="headerlink" title="6、删除"></a>6、删除</h4><p>x 删除当前字符</p>
+<p>3x 删除当前光标开始向后三个字符</p>
+<p>X 删除当前字符的前一个字符。X=dh</p>
+<p>dl 删除当前字符， dl=x</p>
+<p>dh 删除前一个字符</p>
+<p>dd 删除当前行</p>
+<p>dj 删除上一行</p>
+<p>dk 删除下一行</p>
+<p>10d 删除当前行开始的10行。</p>
+<p>D 删除当前字符至行尾。D=d$</p>
+<p>d$ 删除当前字符之后的所有字符（本行）</p>
+<p>kdgg 删除当前行之前所有行（不包括当前行）</p>
+<p>jdG（jd shift + g）   删除当前行之后所有行（不包括当前行）</p>
+<p>:1,10d 删除1-10行</p>
+<p>:11,$d 删除11行及以后所有的行</p>
+<p>:1,$d 删除所有行</p>
+<p>J(shift + j)　　删除两行之间的空行，实际上是合并两行</p>
+<h4 id="7、快速跳转"><a href="#7、快速跳转" class="headerlink" title="7、快速跳转"></a>7、快速跳转</h4><ul>
+<li>跳到指定行<br>ngg 或者 nG                    n为指定的行数，如12gg或者12G 跳转到第12行.</li>
+</ul>
+<p>​       gg                                      跳转到当前文件的第一行</p>
+<p>​       G                                       跳转光标到当前文件的最后一行</p>
+<p>​         :n                                    在命令模式下输入行号n</p>
+<p>​     vim +n FileName             打开文件即跳转到指定行，行号n</p>
+<ul>
+<li>跳转到当前行的指定列<br>0 或 |            :  跳转光标到当前行的行首。<br>$                     :  跳转光标到当前行的行尾<br> 0nl 或 n|       : 跳转到当前行的第 n 列</li>
+</ul>
+<h4 id="8、保存文档"><a href="#8、保存文档" class="headerlink" title="8、保存文档"></a>8、保存文档</h4><p> 从普通模式输入:进入命令行模式，输入w回车，保存文档。输入:w 文件名可以将文档另存为其他文件名或存到其它路径下 </p>
+<h4 id="9、退出vim"><a href="#9、退出vim" class="headerlink" title="9、退出vim"></a>9、退出vim</h4><p> 从普通模式输入<code>:</code>进入命令行模式，输入<code>wq</code>回车，保存并退出编辑 </p>
+<p>：q！                                     ：强制退出，不保存</p>
+<p>：q                                         ：退出</p>
+<p>：wq！                                   ：强制退出，不保存</p>
+<p>：w&lt;文件路径&gt;                      ：另存为</p>
+<p>：saveas 文件路径                 ：另存为</p>
+<p>：x                                            ：保存并退出</p>
+<p>：wq                                         ：保存并退出</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%80%83%E6%A0%B8%E5%88%9D%E6%88%98/">考核初战</a>
+                    
+                      <a class="hover-with-bg" href="/tags/vim/">vim</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/03/00007-git%E5%AD%A6%E4%B9%A0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">git</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/27/00004-Linux/">
+                        <span class="hidden-mobile">Linux</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'icy-dark';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'zyxyling/share');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

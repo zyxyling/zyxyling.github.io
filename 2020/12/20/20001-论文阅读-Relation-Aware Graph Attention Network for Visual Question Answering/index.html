@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <title>论文阅读-Relation-Aware Graph Attention Network for Visual Question Answering - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":false,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>zyxyling</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/ReGAT.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="论文阅读-Relation-Aware Graph Attention Network for Visual Question Answering">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-12-20 00:06" pubdate>
+        December 20, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      9.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      102
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">论文阅读-Relation-Aware Graph Attention Network for Visual Question Answering</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>论文阅读</p>
+<p>GAT-VQA</p>
+<p>ICCV.2019</p>
+<p>Relation-Aware Graph Attention Network for Visual Question Answering 用于视觉问答的关系感知图注意力网络</p>
+<p>原文：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1903.12314.pdf">https://arxiv.org/pdf/1903.12314.pdf</a></p>
+</blockquote>
+<h1 id="论文阅读-Relation-Aware-Graph-Attention-Network-for-Visual-Question-Answering"><a href="#论文阅读-Relation-Aware-Graph-Attention-Network-for-Visual-Question-Answering" class="headerlink" title="论文阅读-Relation-Aware Graph Attention Network for Visual Question Answering"></a>论文阅读-Relation-Aware Graph Attention Network for Visual Question Answering</h1><h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a><strong>一、标题</strong></h2><p>Relation-Aware Graph Attention Network for Visual Question Answering</p>
+<p>用于视觉问答的关系感知图注意力网络</p>
+<h2 id="二、引用"><a href="#二、引用" class="headerlink" title="二、引用"></a><strong>二、引用</strong></h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">[<span class="hljs-number">1</span>] Linjie Li, Zhe Gan, Yu Cheng, Jingjing Liu. <span class="hljs-string">&quot;Relation-Aware Graph Attention Network for Visual Question Answering.&quot;</span> In The International Conference <span class="hljs-keyword">on</span> Computer Vision (ICCV), <span class="hljs-number">2019</span><br></code></pre></td></tr></table></figure>
+
+
+<h2 id="三、出处"><a href="#三、出处" class="headerlink" title="三、出处"></a><strong>三、出处</strong></h2><p>ICCV 2019</p>
+<h2 id="四、原文链接"><a href="#四、原文链接" class="headerlink" title="四、原文链接"></a><strong>四、</strong>原文链接</h2><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1903.12314.pdf">https://arxiv.org/pdf/1903.12314.pdf</a></p>
+<h2 id="五、论文主要内容"><a href="#五、论文主要内容" class="headerlink" title="五、论文主要内容"></a>五、论文主要内容</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h3><p>​        为了回答关于图像的复杂语义问题，视觉问答$（VQA）$模型需要更好地理解图像中的视觉场景，尤其是不同对象之间的动态交互。作者提出了一种关系感知图注意力网络$（ReGAT）$，该网络将每个图像编码成一个图，并通过图注意力机制对多种类型的内在关系对象间进行建模，以学习自适应问题的关系表示。 探讨了两种类型的视觉对象关系：（i）显示关系，即表示对象之间的几何位置和语义交互； （ii）隐式关系，用于捕获图像区域之间的隐含活动。 实验表明，$ReGAT$在$VQA 2.0$和$VQA-CP v2$数据集上均优于现有技术。 我们进一步证明$ReGAT$与现有的$VQA$体系结构兼容，并且可以用作通用关系编码器以提高$VQA$的模型性能。</p>
+<h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.  介绍"></a><strong>1.</strong>  <strong>介绍</strong></h3><p>​        深度学习的最新进展推动了计算机视觉和自然语言处理（NLP）方面的巨大进步。 语言和视觉之间的跨学科领域，例如图像标题，文本生成图像和视觉问答（VQA），已引起视觉和NLP社区的迅速关注。 以VQA为例-目标（也是主要挑战）是训练一个模型，该模型可以实现对多模态输入的全面且语义一致的理解。 具体地，给定图像和基于图像的自然语言问题，任务是将图像中的视觉特征与问题中的语义相关联，以便正确回答问题。</p>
+<p>​        VQA的大多数最新方法[56、11、38、33、49]都集中于学习图像和问题的多模态联合表示。 具体而言，卷积神经网络（CNN）或基于区域的CNN（R-CNN）通常用作图像编码的视觉特征提取器，而递归神经网络（RNN）用于问题编码。 从视觉特征提取器获得一组稀疏的图像区域后，应用多模态融合来学习一个联合表示，该联合表示表示每个单独区域与问题之间的对齐方式。然后将此联合表示形式输入到答案预测器中以产生答案。</p>
+<p>​        事实证明，该框架对于VQA任务很有用，但是图像和自然语言之间仍然存在巨大的语义鸿沟。 例如，给定一组斑马的图像（参见图1），模型可以识别黑色和白色像素，但不能识别来自哪个斑马的白色和黑色像素。 因此，很难回答诸如“<em>最右边的斑马是小斑马吗？</em>”或“<em>所有斑马都在吃草吗？</em>” 之类的问题。 VQA系统不仅需要识别对象（“斑马”）和周围环境（“草”），还需要识别图像和图像中有关动作（“饮食”）和位置（“最右边”）信息。</p>
+<p>​        为了捕获这种类型的动作和位置信息，我们不仅需要在图像理解中进行对象检测，还需要通过解释图像中<font color=Blue>不同对象之间的动态和相互作用</font>来了解图像中视觉场景的更全面视图 。 一种可能的解决方案是检测相邻物体的相对几何位置（例如<motorcycle-next to-car>），以与问题中的空间描述保持一致。 另一个方向是学习对象之间的语义依赖性（例如<girl-eating-cake>），以捕获视觉场景中的交互式动态。</p>
+<p>​        为此，我们提出了一种用于VQA的关系感知图注意力网络（ReGAT），引入了一种新颖的关系编码器，<font color=Blue>该编码器可捕获静态对象/区域检测之外的这些对象间关系。 这些视觉关系特征可以揭示图像中更细粒度的视觉概念，从而提供整体的场景解释，可用于回答语义复杂的问题。</font> 为了覆盖图像场景和问题类型中的高方差<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="较大的差异度，描述与场景
+">[1]</span></a></sup>，关系编码器学习了显式（例如，空间/位置，语义/可操作）关系和隐式关系，其中图像表示为图，并且通过图注意力机制捕获了对象之间的交互。</p>
+<p>进一步，基于问题的上下文来学习图注意力，从而允许将语义信息从问题注入到关系编码阶段。 这样，关系编码器学习到的特征不仅捕获图像中与对象互动的视觉内容，而且吸收问题中的语义线索，从而动态地关注每个问题的特定关系类型和实例。</p>
+<p><img src="F:\BLOG\blog\hexoblog\themes\fluid\source\img\ReGAT.png" alt="img"></p>
+<p>​    图1. ReGAT模型的概述。 同时考虑了显式关系（语义和空间关系）和隐式关系。</p>
+<p>​    所提出的关系编码器通过“图注意力”捕获自适应问题的对象交互。</p>
+<p>​        图1显示了所提出模型的概述。首先，使用Faster R-CNN生成一组候选区域，并使用问题编码器进行问题嵌入。 然后将每个区域的卷积和边界框特征注入到关系编码器中，以从图像中学习关系感知、问题自适应、区域级表示。 然后将这些具有关系感知的视觉特征和问题嵌入馈送到多模态融合模块中以生成联合表示，该联合表示在答案预测模块中用于生成答案。</p>
+<p>​        原则上，我们的工作不同于（并兼容）现有的VQA系统。 它着眼于一个新的维度：使用问题自适应对象间关系来丰富图像表示，以增强VQA性能。我们的工作有以下三方面的贡献：</p>
+<p>​        •我们提出了一种新颖的基于图的关系编码器，以通过图注意力网络学习视觉对象之间的显式和隐式关系。</p>
+<p>​         •学习的关系是问题自适应的 ，这意味着它们可以动态捕获与每个问题最相关的视觉对象关系。</p>
+<p>​        •我们表明，我们的ReGAT模型是一种通用方法，可用于改进VQA 2.0数据集上的最新VQA模型。 我们的模型还在更具挑战性的VQA-CP v2数据集上实现了最先进的性能。</p>
+<h3 id="2-相关工作"><a href="#2-相关工作" class="headerlink" title="2.  相关工作"></a><strong>2.</strong>  <strong>相关工作</strong></h3><h4 id="2-1-VQA"><a href="#2-1-VQA" class="headerlink" title="2.1  VQA"></a>2.1  VQA</h4><p>​        VQA 系统当前的主流框架包括图像编码器、问题编码器、多模态融合和答案预测器。代替直接使用基于CNN的特征提取器的视觉特征，[56、11、41、33、49、38、63、36]探索了各种图像注意力机制来定位与问题相关的区域。 为了更好地表达问题，[33，38，11]提出了协作进行问题导向的图像注意力和图像导向的问题注意力，以在编码阶段将视觉和文本模态中的知识进行合并。 [15，25，60，4，24]探索了更高阶的融合方法，以更好地将文本信息与视觉信息相结合（例如，使用双线性池代替诸如求和，串联和乘法之类的更简单的一阶方法）。</p>
+<p>​        为了使模型更易于解释，一些文献[30、59、29、54、55、53]还利用了图像中的高级语义信息，例如属性，标题和视觉关系事实。 这些方法大多数都使用独立于VQA的模型从图像中提取语义知识，而[34]建立了Relation-VQA数据集并直接挖掘特定于VQA的关系事实，以将额外的语义信息提供给模型。 最近的一些研究[48，35，29]研究了如何结合记忆来辅助推理步骤，特别是对于有难度的问题。</p>
+<p>​        但是，由记忆或高级语义信息带来的语义知识通常会转换为文本表示形式，而不是直接用作包含大量有关图像的指示性信息的视觉表示形式。 我们的工作是对这些先前研究的补充，因为我们将对象关系直接编码为图像表示形式，并且关系编码步骤是通用的，自然可以适合任何最新的VQA模型。</p>
+<h4 id="2-2-视觉关系"><a href="#2-2-视觉关系" class="headerlink" title="2.2 视觉关系"></a>2.2 视觉关系</h4><p>​        在深度学习流行之前，已经探索了视觉关系。 早期工作[10、14、7、37]提出了通过将对象关系（例如，共现[10]，位置和大小[5]）视为对象检测的后处理步骤来对得分进行重新评分的方法。 先前的一些工作[16，17]还探讨了对象之间的空间关系（例如，“上方”，“周围”，“下方”和“内部”）可以帮助改善图像分割的想法。</p>
+<p>​        事实证明，视觉关系对于许多计算机视觉任务至关重要。 例如，它有助于将图像映射到标题[13，12，58]的认知任务，并改善了图像搜索[47，23]和对象定位[45，21]。 视觉关系的最新研究[45、43、9]更加关注非空间关系，或称为“语义关系”（即对象的动作或对象之间的相互作用）。为视觉关系预测任务[32，8，61]设计了一些神经网络架构。</p>
+<p><img src="F:\BLOG\blog\hexoblog\themes\fluid\source\img\ReGAT1.png" alt="img"></p>
+<p>​        图2.提出的用于视觉问题回答的ReGAT的模型架构。更快的R-CNN用于检测一组对象区域。 然后将这些区域级特征馈入不同的关系编码器中，以学习可识别关系的问题的视觉特征，并将其与问题表示法融合以预测答案。为了简单起见，省略了多模态融合和答案预测变量。</p>
+<h4 id="2-3-关系推理"><a href="#2-3-关系推理" class="headerlink" title="2.3 关系推理"></a>2.3 关系推理</h4><p>​        我们将上述视觉关系命名为显式关系，这已被证明对图像字幕有效[58]。 具体来说，[58]利用了从视觉基因组数据集[28]和对象之间的空间关系中学到的预定义语义关系。 基于这些关系构造图，并进行图卷积网络（GCN）[26]用于学习每个对象的表示。</p>
+<p>​         另一研究重点是隐式关系，其中不使用显式语义或空间关系来构造图形。 取而代之的是，所有关系都由注意力模块或通过高阶方法隐式捕获到输入图像的完全连接图上[46、21、6、57]，以对检测到的对象之间的交互进行建模。 例如，[46]通过使用简单的MLP<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="多层感知器(Multi-Layer Perceptron，MLP)
+">[2]</span></a></sup>     对图像中所有可能的对象对进行推理。在[6]中，引入了一种双线性融合方法，称为MuRel单元，以进行成对关系建模。</p>
+<p>​        已经提出了一些其他工作[50、39、52]，用于学习图像的问题条件图表示。 具体来说，[39]介绍了一种图学习器模块，该模块以问题表示为条件，以使用成对注意和空间图卷积来计算图像表示。 [50]利用结构化的问题表示形式，例如解析树，并使用GRU对对象和单词之间的上下文交互进行建模。较新的工作[52]引入了由类间/类间边缘定义的稀疏图，其中关系是通过语言指导的图注意机制隐式学习的。 但是，所有这些工作仍集中在隐式关系上，隐式关系比显式关系难解释。</p>
+<p><strong>我们的贡献</strong></p>
+<p>​        我们的工作受到[21，58]的启发。但是，与它们不同，ReGAT同时考虑了显式和隐式关系来丰富图像表示。对于显式关系，我们的模型使用图注意力网络（GAT）而非[58]中使用的简单GCN。 与GCN相对，GAT的使用允许为同一邻域的节点分配不同的重要性。 对于隐式关系，我们的模型通过过滤掉与问题无关的关系，而不是像在[21]中一样地处理所有其他关系，来学习一个适用于每个问题的图。在实验中，我们进行了详细的消融研究 ，以证明每个单独设计的有效性。</p>
+<h3 id="3-关系感知图注意力网络"><a href="#3-关系感知图注意力网络" class="headerlink" title="3.  关系感知图注意力网络"></a><strong>3.</strong>  <strong>关系感知图注意力网络</strong></h3><p>下面是VQA任务的问题定义:给定一个基于图像I的问题q，目标是预测一个答案a，这个答案a^ ∈A与基本事实答案a* 最匹配。作为VQA文献中的常见实践，这可以定义为一个分类问题：</p>
+<p><img src="F:\BLOG\blog\hexoblog\themes\fluid\source\img\ReGAT2.png" alt="img"></p>
+<p>其中pθ是训练后的模型。</p>
+<pre><code>      图2给出了我们提出的模型的详细说明，该模型由图像编码器，问题编码器和关系编码器组成。 对于图像编码器，Faster R-CNN [2]用于标识一组对象V = &#123;vi&#125; K i = 1，其中每个对象vi都与视觉特征向量vi∈R dv和边界框相关联 特征向量bi∈R db（在我们的实验中，K = 36，dv = 2048，并且db = 4）。 每个bi = [x，y，w，h]对应于4维空间坐标，其中（x，y）表示边界框左上点的坐标，而h / w对应于边框的高度/宽度 盒子。 对于问题编码器，我们使用带有门控循环单元（GRU）的双向RNN，并对RNN隐藏状态的序列进行自我关注，以生成问题嵌入![img](file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image008.gif)（在我们的实验中，d q = 1024）。 以下小节将说明关系编码器的详细信息。</code></pre>
+<h4 id="3-1-图结构"><a href="#3-1-图结构" class="headerlink" title="3.1 图结构"></a>3.1 图结构</h4><p><strong>全连接关系图</strong></p>
+<p>​        通过将图像中的每个对象vi视为一个顶点，我们可以构建完全连接的无向图G imp =（V，E），其中E是K×（K − 1）个边的集合。 每个边缘代表两个对象之间的隐式关系，这可以通过学习图的注意力分配给每个边缘分配的权重来反映。 无需任何先验知识即可隐式学习所有权重。 我们将基于该图Gimp的关系编码器命名为隐式关系编码器。</p>
+<p><strong>先验知识剪枝图</strong></p>
+<p>​        另一方面，如果可以使用顶点之间的解释，则可以通过修剪不存在相应显式关系的边来将完全连接的图G imp轻松转换为显式关系图。 对于每对对象i，j，如果<i-p-j>是有效关系，则从i到j创建一条边缘，并带有边缘标签p。 此外，我们为每个对象节点i分配一个自环边，并将该边标记为相同。 以这种方式，图变得稀疏，并且每个边缘都编码有关图像中一个对象间关系的先验知识。 我们将基于此图的关系编码器命名为显式关系编码器。</p>
+<pre><code>  这些功能的显式本质要求经过预训练的分类器以离散类标签的形式提取关系 ，这些类标签表示对人眼显性的对象之间的动态关系和交互作用。 基于此修剪图，可以学习不同类型的显式关系。 在本文中，我们探索了两个实例：空间图和语义图，以捕获对象之间的位置关系和可操作关系，这对于视觉问题的回答是必不可少的。</code></pre>
+<p><strong>空间图</strong></p>
+<p>​        令spa i，j = &lt;对象i-谓词-对象j&gt;表示表示对象i与对象i的相对几何位置的空间关系。</p>
+<pre><code>   为了构造空间图G spa，给定两个对象区域提议对象i和对象j，我们将spa i，j分为11个不同类别[58]（例如，对象i在对象j（类1）内，对象j 在对象i（类2）内部，如图3（a）所示，其中包括为彼此距离太远的对象保留的无关系类。 请注意，由空间关系形成的边是对称的：如果&lt;object i -pi，j -object j&gt;是有效的空间关系，则必须存在有效的空间关系spa j，i = &lt;object j -pj，i -object i &gt;。 但是，两个谓词p i，j和p j，i是不同的。</code></pre>
+<p><img src="F:\BLOG_blog\hexoblog\themes\fluid\source\img\ReGAT3.png" alt="img"><img src="F:\BLOG_blog\hexoblog\themes\fluid\source\img\ReGAT4.png" alt="img"></p>
+<p> (a) Spatial Relation                    (b) Semantic Relation</p>
+<p>图3.空间和语义关系的图示。 绿色箭头表示关系的方向（主题→对象）。 绿色框中的标签是关系的类标签。 红色和蓝色框包含对象的类标签。</p>
+<p><strong>语义图</strong></p>
+<p>​        为了构造语义图G sem，需要提取对象之间的语义关系（例如，<subject-predicate-object>）。通过在视觉关系数据集（例如，视觉基因组[27]）上训练语义关系分类器，可以将其表达为分类任务[58]。 给定两个对象区域i和j，目标是确定哪个谓词p表示这两个区域之间的语义关系<i-p-j>。 在此，主题j和对象i之间的关系是不可互换的，这意味着由语义关系形成的边缘不是对称的。 对于有效的&lt;i-p i，j -j&gt;，在我们的定义中可能不存在关系&lt;j-p j.i -i&gt;。 例如，<man-holding-bat>是有效关系，而从bat到man没有语义关系。</p>
+<p>分类模型接受三个输入：主题区域vi的特征向量，对象区域vj的特征向量， 包含i和j的联合边界框的区域级特征向量vi，j。 这三种类型的特征是从预训练的目标检测模型中获得的，然后通过嵌入层进行转换。然后将嵌入的特征进行连接并馈入分类层，以在14个语义关系上产生softmax概率，并附加一个无关系 类。 然后将训练后的分类器用于预测给定图像中任何一对对象区域之间的关系。 语义关系的示例在图3（b）中显示。</p>
+<h4 id="3-2-关系编码器"><a href="#3-2-关系编码器" class="headerlink" title="3.2 关系编码器"></a>3.2 关系编码器</h4><p><strong>问题自适应图注意力</strong></p>
+<p>​        提出的关系编码器旨在对图像中的对象之间的动态关系进行编码。 对于VQA任务，可能存在对不同问题类型有用的不同类型的关系。 因此，在设计关系编码器时，我们使用问题自适应注意机制将问题的语义信息注入到关系图中，以便为与每个问题最相关的那些关系动态分配更高的权重。这是通过首先将嵌入q的问题与K个视觉特征v i的每一个串联来实现的，表示为</p>
+<p> <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image014.gif" alt="img"></p>
+<p>​        然后在顶点上执行自注意力，这会生成隐藏的关系特征<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image016.gif" alt="img">，这些特征表征目标对象及其邻近对象之间的关系。</p>
+<p>​        基于此，每个关系图都要经过以下注意机制：</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image018.gif" alt="img"></p>
+<p>​        对于不同类型的关系图，关注系数αij的定义会发生变化，投影矩阵<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image020.jpg" alt="img">和对象i的邻域<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image022.jpg" alt="img">也会发生变化。</p>
+<p>​         σ（·）是一个非线性函数，例如ReLU。 为了稳定自我注意力的学习过程，我们还通过采用多头注意力扩展了上述图注意力机制，其中执行了M个独立的注意力机制，并连接了它们的输出特征，从而得到以下输出特征表示</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image024.gif" alt="img"></p>
+<p>​        最后，将<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image026.jpg" alt="img">添加到原始视觉特征vi中，以充当最终的关系感知特征。</p>
+<p><strong>隐含关系</strong></p>
+<p>​        由于用于学习隐式关系的图是全连接的，因此<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image027.jpg" alt="img">包含图像中的所有对象，包括对象i本身。 受[21]启发，我们将注意力权重<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image029.jpg" alt="img"> 设计为不仅取决于视觉特征权重<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image031.jpg" alt="img">，而且还取决于边界框权重<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image033.jpg" alt="img">。 特别，</p>
+<p><strong><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image035.gif" alt="img"></strong></p>
+<p>其中，<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image036.jpg" alt="img">表示视觉特征之间的相似度，通过缩放的点积[51]计算得出：</p>
+<p><strong><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image038.gif" alt="img"></strong></p>
+<p>其中<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image040.jpg" alt="img">是投影矩阵。<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image033.jpg" alt="img">测量任何一对区域之间的相对几何位置：</p>
+<p><strong><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image042.gif" alt="img"></strong></p>
+<p>其中fb（·，·）首先计算4维相对几何特征<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image044.jpg" alt="img"> ，然后通过计算不同波长的余弦和正弦函数，将其转换为一个dh维的特征。 <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image046.gif" alt="img"> <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image048.gif" alt="img">将dh维的特征转换为标量权重，将其进一步修剪为0。与我们在显式关系设置中假设彼此之间距离太远的对象无关系不同，隐式关系的限制 通过w和零调整操作获知。</p>
+<p><strong>显式关系</strong></p>
+<p>​        我们首先考虑语义关系编码器。 由于语义图 <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image050.jpg" alt="img"> 中的边现在包含标签信息并且是有方向的，因此我们将（3）中的注意力机制设计为对方向性<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image052.jpg" alt="img">和标签都敏感。 特别，</p>
+<p><strong><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image054.gif" alt="img"></strong></p>
+<p>​        其中W {·}，V {·}是矩阵，b {·}，c {·}是偏置项。 dir（i，j）选择每个边的方向性的变换矩阵，而lab（i，j）代表每个边的标签。 因此，在通过上述图注意力机制对所有区域<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image056.jpg" alt="img">进行编码之后，精细化的区域级特征<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image058.jpg" alt="img">被赋予对象之间的先验语义关系。</p>
+<pre><code>  与图卷积网络相反，该图注意力机制有效地将不同的重要性分配给相同邻域的节点。 结合问题自适应机制，学习注意权重可以反映出哪些关系与特定问题相关。 相关编码器可以在空间图![img](file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image060.jpg)上以相同的方式工作，具有要学习的不同参数集，因此为简单起见，省略了详细信息。</code></pre>
+<h4 id="3-3-多模态融合与答案预测"><a href="#3-3-多模态融合与答案预测" class="headerlink" title="3.3 多模态融合与答案预测"></a>3.3 多模态融合与答案预测</h4><p>​        在获得关系感知的视觉特征之后，我们希望通过多模型融合策略将问题信息q与每个视觉表示 <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image062.jpg" alt="img"> 融合。 由于我们的关系编码器保留了视觉特征的维数，因此可以将其与任何现有的多模式融合方法结合使用，以学习联合表示J：</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image064.gif" alt="img"></p>
+<p>其中f是多模式融合方法，而Θ是融合模块的可训练参数。</p>
+<p>​        对于答案预测器，我们采用两层多层感知器（MLP）作为分类器，联合表示形式J为输入 。 类似于[2]，二进制交叉熵被用作损失函数。</p>
+<pre><code>    在训练阶段，对不同的关系编码器进行独立训练。 在推论阶段，我们将三个图注意力网络与预测答案分布的加权和相结合。 具体而言，最终答案分布由以下公式计算：</code></pre>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image066.gif" alt="img"></p>
+<p>其中α和β是权衡的超参数（0≤α+β≤1,0≤α，β≤1）。  <img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image068.jpg" alt="img">和<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image070.jpg" alt="img">分别表示根据语义，空间和隐式关系训练的模型的预测答案<img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image072.jpg" alt="img"> 的概率。</p>
+<h3 id="4-实验"><a href="#4-实验" class="headerlink" title="4.  实验"></a><strong>4.</strong>  <strong>实验</strong></h3><p>我们在VQA 2.0和VQA-CP v2数据集[3，19，1]上评估了我们提出的模型。 此外，Visual Genome [27]用于预训练语义关系分类器。 在testdev和test-std拆分上进行测试时，它还用于扩充VQA数据集。 我们使用准确性作为评估指标：</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image074.gif" alt="img"></p>
+<h4 id="4-1-数据集"><a href="#4-1-数据集" class="headerlink" title="4.1 数据集"></a>4.1 数据集</h4><p>​        VQA 2.0数据集由MSCOCO [31]的真实图像组成，具有相同的训练/验证/测试分割。对于每个图像，平均会生成3个问题。 这些问题分为3类：是/否，数字和其他。 从人类注释者那里为每个图像问题对收集了10个答案，最频繁的答案被选为正确答案。 此数据集中包括开放式和多项选择题类型。 在这项工作中，我们将重点放在开放性任务上，并将在训练集中出现超过9次的答案作为候选答案，从而产生3,129个候选答案。 该模型是在训练集上训练的，但是在测试集上进行测试时，训练集和验证集都用于训练，并且将最大概率答案选择为预测答案。</p>
+<p>​      VQA-CP v2数据集是VQA 2.0数据集的派生，它被引入以评估和减少VQA模型中面向问题的偏见。 特别是，关于问题类型的答案分布在训练和测验拆分之间是不同的。</p>
+<pre><code>    Visual Genome包含108K图像，这些图像带有密集注释的对象，属性和关系，我们使用它们来预先训练模型中的语义关系分类器。 我们过滤掉了那些也出现在VQA验证集中的图像，并将关系数据分为88K进行训练，8K进行验证和8K进行测试。 此外，在使用Visual Genome中提供的关系别名对谓词进行归一化后，我们在训练数据中选择了前14个最频繁的谓词。 最终的语义关系分类器经过14个关系类以及一个无关系类的训练。</code></pre>
+<h4 id="4-2-实施细节"><a href="#4-2-实施细节" class="headerlink" title="4.2 实施细节"></a>4.2 实施细节</h4><p>​        每个问题都被标记，每个单词都使用600维单词嵌入（包括300维GloVe单词嵌入[42]）。 然后将嵌入单词的序列在每个时间步长之前馈入GRU，直到第14个令牌为止（类似于[24]）。 少于14个单词的问题在结尾处填充零个向量。 GRU中隐藏层的维数设置为1024。我们对所有三个图形注意网络采用16头的多头注意。 关系特征的尺寸设置为1024。对于隐式关系，我们将嵌入的相对几何特征尺寸d h设置为64。</p>
+<p>​          对于语义关系分类器，我们结合ResNet-101 [20]，从Faster R-CNN [44]模型中提取具有已知边界框的预训练对象检测特征。 更具体地说，特征是从Res4b22特征图[58]进行RoI合并后Pool5层的输出。 Faster R-CNN模型训练了1,600个选定的对象类别和400个属性类别，类似于自下而上的注意[2]。</p>
+<p>​        我们的模型基于PyTorch [40]实现。 在实验中，我们使用Adamax优化器进行训练，最小批量大小为256。对于学习率的选择，我们采用热身策略[18]。 具体来说，我们以0.0005的学习率开始，在每个周期线性增加它，直到在第4个周期达到0.002。在15个周期之后，每2个周期直至20个周期，学习率降低1/2。 每个线性映射都通过权重和丢弃进行归一化（p = 0.2，但分类器为0.5）。</p>
+<h4 id="4-3-实验结果"><a href="#4-3-实验结果" class="headerlink" title="4.3 实验结果"></a>4.3 实验结果</h4><p>​        本小节提供了有关VQA 2.0和VQA-CP v2数据集的实验结果。 通过设计，关系编码器可以作为即插即用组件组合到不同的VQA体系结构中。 在我们的实验中，我们考虑了三种具有不同多模态融合方法的流行VQA模型：自下而上，自上而下[2]（BUTD），多模态塔克融合[4]（MUTAN）和双线性注意力网络[24]（BAN）。 表1报告了以下设置中的VQA 2.0验证集的结果：</p>
+<pre><code>  •Imp / Sem / Spa：仅一种类型的关系（隐式，语义或空间关系）用于合并自下而上的注意力特征。</code></pre>
+<p>​      •Imp + Sem / Imp + Spa / Sem + Spa：通过加权和使用两种不同类型的关系。</p>
+<p>​      •全部：通过加权和使用所有三种关系（例如：α= 0.4，β= 0.3）。 参见等式。 （10）有关详细信息。</p>
+<p>​        与基线模型相比，在添加建议的关系编码器之后，我们可以观察到所有三种架构的性能均得到稳定的提高。 这些结果表明，我们的ReGAT模型是一种通用方法，可用于改进最新的VQA模型。 此外，结果表明，每个单个关系都有助于提高性能，并且关系的成对组合可以实现一致的性能增益。 当所有这三种类型组合在一起时，我们的模型可以达到最佳性能。 通过将最佳单关系模型与加权总和相结合，可以实现最佳结果。 为了验证性能提升是否显着，我们对BAN基准和我们建议的模型的每个关系进行了t-test检验。 我们在表1中报告了标准偏差，p值为0.001459。 我们方法的改进在p &lt;0.05时很明显。 我们还与使用BiLSTM作为上下文关系编码器的其他基线模型进行了比较，结果表明，使用BiLSTM会损害性能。</p>
+<p><img src="F:\BLOG_blog\hexoblog\themes\fluid\source\img\ReGAT5.png" alt="img"></p>
+<p>表1.使用不同融合方法的VQA 2.0验证集的性能。 在3种流行的融合方法中观察到了一致的改进，这表明我们的模型与通用VQA框架兼容。 （†）结果基于我们的重新实施。</p>
+<p><img src="F:\BLOG_blog\hexoblog\themes\fluid\source\img\ReGAT6.png" alt="img"></p>
+<p>表2. VQA-CP v2基准上的模型准确性（测试拆分上的开放式设置）。</p>
+<p><img src="F:\BLOG_blog\hexoblog\themes\fluid\source\img\ReGAT7.png" alt="img"></p>
+<p>表3. VQA 2.0基准上的模型准确性（test-dev和test-std拆分的开放式设置）。</p>
+<p><img src="file:///C:/Users/lenovo/AppData/Local/Temp/msohtmlclip1/06/clip_image082.gif" alt="img"></p>
+<p>表4.用于消融研究的VQA 2.0验证集的性能（支持Q：支持问题；提示：Attention）。</p>
+<p>​        为了证明ReGAT模型的通用性，我们还对VQA-CP v2数据集进行了实验，其中训练和测试拆分的分布彼此非常不同。 表2显示了VQA-CP v2测试拆分的结果。 在这里，我们使用具有四次瞥见的BAN作为基准模型。 与我们在VQA 2.0上观察到的一致，我们的ReGAT模型大大超过了基线。 仅凭单一关系，我们的模型就已经在VQACP v2上实现了最先进的性能（40.30与39.54）。 加上所有关系后，性能提升进一步提高到+0.88。</p>
+<p>​      表3显示了VQA 2.0 test-dev和test-std拆分的单模型结果。 前五行显示的是没有关系推理的模型的结果，而后四行则是具有关系推理的模型的结果。 我们的模型可以胜任所有以前的工作，也可以不进行任何关系推理。 我们的最终模型将双线性注意和四次瞥视作为多峰融合方法。 与使用8个双线性注意图的BAN [24]相比，我们的模型在BAN方面的表现要好得多。 Pythia [22]通过添加其他网格级别的功能并针对所有图像在VQA数据集上使用经过微调的Faster R-CNN的100个对象建议来达到70.01。 我们的模型没有在工作中使用任何功能增强功能，其性能大大超过了Pythia。</p>
+<h4 id="4-4-消融研究-lt-span-class-”hint–top-hint–rounded”-aria-label-”消融研究-通常是指删除模型或算法的一些”功能”，并查看这如何影响性能。实际上ablation-study就是为了研究模型中所提出的一些结构是否有效而设计的实验。比如你提出了某某结构，但是要想确定这个结构是否有利于最终的效果，那就要将去掉该结构的网络与加上该结构的网络所得到的结果进行对比，这就是ablation-study"><a href="#4-4-消融研究-lt-span-class-”hint–top-hint–rounded”-aria-label-”消融研究-通常是指删除模型或算法的一些”功能”，并查看这如何影响性能。实际上ablation-study就是为了研究模型中所提出的一些结构是否有效而设计的实验。比如你提出了某某结构，但是要想确定这个结构是否有利于最终的效果，那就要将去掉该结构的网络与加上该结构的网络所得到的结果进行对比，这就是ablation-study" class="headerlink" title="4.4 消融研究&lt;span class=”hint–top hint–rounded” aria-label=”消融研究: 通常是指删除模型或算法的一些”功能”，并查看这如何影响性能。实际上ablation study就是为了研究模型中所提出的一些结构是否有效而设计的实验。比如你提出了某某结构，但是要想确定这个结构是否有利于最终的效果，那就要将去掉该结构的网络与加上该结构的网络所得到的结果进行对比，这就是ablation study"></a>4.4 消融研究<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote">&lt;span class=”hint–top hint–rounded” aria-label=”消融研究: 通常是指删除模型或算法的一些”功能”，并查看这如何影响性能。实际上ablation study就是为了研究模型中所提出的一些结构是否有效而设计的实验。比如你提出了某某结构，但是要想确定这个结构是否有利于最终的效果，那就要将去掉该结构的网络与加上该结构的网络所得到的结果进行对比，这就是ablation study</h4><p>“&gt;[3]</span></a></sup></p>
+<p>​        在表4中，我们比较了三个完整的ReGAT消融实例。 具体来说，我们验证了将问题特征连接到每个对象表示和注意力机制的重要性。 表4中报告的所有结果均基于BUTD模型架构。为了从关系编码器中消除注意力机制，我们只需将图注意力网络替换为图卷积网络，即可通过简单的线性变换从图中学习节点表示。</p>
+<pre><code>      首先，我们验证了使用注意力机制学习关系感知视觉特征的有效性。 增加注意力机制会导致所有三种关系的准确性更高。 第1行和第2行的比较显示，语义关系的增益为+0.70，空间关系的增益为+0.81。 其次，我们验证了问题自适应关系特征的有效性。 在第1行和第3行之间，对于语义和空间关系，我们看到大约+0.1的增益。 最后，添加注意力机制和问题自适应功能以提供完整的ReGAT模型。 此实例的准确性最高（第4行）。 出乎意料的是，通过比较第1行和第4行，我们可以观察到，将图形注意力与问题自适应相结合，比简单地将两种方法的单个增益相加可获得更好的增益。 值得一提的是，对于隐式关系，添加问题自适应将模型性能提高+0.74，这比两个显式关系从问题自适应获得的收益要高。 考虑所有关系后，通过添加问题自适应机制，我们观察到了一致的性能提升。</code></pre>
+<p>​        为了更好地理解这两个组件如何帮助回答问题，我们将在第4.5节中进一步可视化并比较通过消融实例获得的注意力图。</p>
+<p><img src="F:\BLOG_blog\hexoblog\themes\fluid\source\img\ReGAT8.png" alt="img"></p>
+<p>图4.从消融实例中学到的注意力图的可视化：每个图像中显示的三个边界框是前3个有人参与的区域。 数字是注意力权重。</p>
+<h4 id="4-5-可视化"><a href="#4-5-可视化" class="headerlink" title="4.5 可视化"></a>4.5 可视化</h4><p>​        为了更好地说明添加图注意力和问题自适应机制的有效性，我们将完整ReGAT模型在单关系环境中学习的注意力图与两个消融模型中学习的注意力图进行了比较。 如图4所示，第二行，第三行和最后一行分别对应于表4中的第1行，第3行和第4行。将第2行与第3行进行比较可以发现，图形注意力有助于捕获对象之间的相互作用，这有助于以更好地对齐图像区域和问题。 第3行和第4行显示，添加问题自适应注意机制会产生更清晰的注意图，并关注更多相关区域。 这些可视化结果与表4中报告的定量结果一致。</p>
+<p><img src="F:\BLOG_blog\hexoblog\themes\fluid\source\img\ReGAT9.png" alt="img"></p>
+<p>图5. VQA任务中不同类型的可视对象关系的可视化。 每个图像中显示的3个边界框是前3个有人参与的区域。 绿色箭头指示对象之间的关系。 绿色框中的标签和数字是用于显式关系的类标签和用于隐式关系的注意权重。</p>
+<p>​        图5提供了有关不同类型的关系如何帮助改善性能的可视化示例。 在每个示例中，我们显示了排名前三位的区域以及这些区域之间的学习关系。 如这些示例所示，每种关系类型都有助于更好地对齐图像区域和问题。 例如，在图5（a）中，语义关系“保持”和“骑行”与相应问题中出现的相同单词产生共鸣。 图5（b）显示了空间关系如何捕获区域之间的相对几何位置。</p>
+<pre><code>  为了可视化隐式关系，图5（c）显示了从其他区域到前1个区域的注意力权重。 令人惊讶地，所学习的隐式关系能够捕获空间和语义交互。 例如，图5（c）的顶部图像显示了桌子和花瓶之间的空间互动，而底部图像显示了交通信号灯和人之间的语义互动。</code></pre>
+<h3 id="5-结论"><a href="#5-结论" class="headerlink" title="5.  结论"></a><strong>5.</strong>  <strong>结论</strong></h3><p>​        我们提出了一种关系感知图注意力网络（ReGAT），这是一种用于视觉问题解答的新颖框架，用于通过具有问题自适应能力的注意力机制来建模多类型对象关系。 ReGAT 利用两种类型的可视对象关系：显式关系和隐式关系，以通过图形注意力学习关系型区域表示。 我们的方法在VQA 2.0和VQA-CP v2数据集上均达到了最新水平。 提出的ReGAT模型与通用VQA 模型兼容。 在两个VQA数据集上进行的综合实验表明，我们的模型可以即插即用的方式注入到最新的VQA体系结构中。 在以后的工作中，我们将研究如何更有效地融合这三个关系以及如何利用每个关系来解决特定的问题类型。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a><strong>参考文献</strong></h3><h2 id="六、参考"><a href="#六、参考" class="headerlink" title="六、参考"></a><strong>六、参考</strong></h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/z704630835/article/details/108263031">https://blog.csdn.net/z704630835/article/details/108263031</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiasli123/article/details/102937712">https://blog.csdn.net/xiasli123/article/details/102937712</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63207928">https://zhuanlan.zhihu.com/p/63207928</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42305378/article/details/103013846">https://blog.csdn.net/weixin_42305378/article/details/103013846</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xiasli123/article/details/102937712?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.channel_param">https://blog.csdn.net/xiasli123/article/details/102937712?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.channel_param&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.channel_param</a></p>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>较大的差异度，描述与场景
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>多层感知器(Multi-Layer Perceptron，MLP)
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>消融研究: 通常是指删除模型或算法的一些”功能”，并查看这如何影响性能。实际上ablation study就是为了研究模型中所提出的一些结构是否有效而设计的实验。比如你提出了某某结构，但是要想确定这个结构是否有利于最终的效果，那就要将去掉该结构的网络与加上该结构的网络所得到的结果进行对比，这就是ablation study
+<a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/GAT/">GAT</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">图神经网络</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%A4%A7%E5%88%9B/">大创</a>
+                    
+                      <a class="hover-with-bg" href="/tags/VQA/">VQA</a>
+                    
+                  </div>
+                
+              </div>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/12/20/62300-Feel%20&amp;%20Wait/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Feel & Wait</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/31/10001-%E5%B0%8F%E6%86%A9/">
+                        <span class="hidden-mobile">小憩</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('comments', function() {
+      var light = 'icy-dark';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'zyxyling/share');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
