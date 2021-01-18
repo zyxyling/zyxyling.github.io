@@ -31,18 +31,7 @@
   
   
   <entry>
-    <title>artitalk</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>categories</title>
+    <title>contact</title>
     <link href="/"/>
     <url>/</url>
     
@@ -64,18 +53,7 @@
   
   
   <entry>
-    <title>link</title>
-    <link href="/"/>
-    <url>/</url>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>contact</title>
+    <title>categories</title>
     <link href="/"/>
     <url>/</url>
     
@@ -87,6 +65,28 @@
   
   <entry>
     <title>tags</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>artitalk</title>
+    <link href="/"/>
+    <url>/</url>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>link</title>
     <link href="/"/>
     <url>/</url>
     
